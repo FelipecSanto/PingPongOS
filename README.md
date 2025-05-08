@@ -6,5 +6,5 @@ Os códigos foram elaborados com base no arquivo `.zip` disponibilizado pelo pro
 
 📄 **Mais informações sobre o código base disponibilizado pelo professor:**
 
-🔗 [Explicação no Moodle](https://moodle.utfpr.edu.br/mod/url/view.php?id=1481029)
+🔗 [Explicação no Moodle](https://www.youtube.com/watch?v=K9-FcJdXVEw&feature=youtu.be)
 
