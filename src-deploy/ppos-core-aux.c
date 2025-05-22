@@ -1,7 +1,9 @@
+#define _XOPEN_SOURCE 600 // Macro de compatibilidade para o uso de setitimer e sigaction
 #include "ppos.h"
 #include "ppos-core-globals.h"
 #include "ppos-disk-manager.h"
-
+#include <signal.h>    // Necessário para struct sigaction e sigaction()
+#include <sys/time.h>  // Necessário para struct itimerval e setitimer()
 
 // ****************************************************************************
 // Adicione TUDO O QUE FOR NECESSARIO para realizar o seu trabalho
@@ -12,97 +14,105 @@
 // ****************************************************************************
 
 
-/*void ppos_init () {
-    // inicializa o sistema operacional
-    taskMain = malloc (sizeof(task_t));
-    taskExec = taskMain;
-    taskDisp = malloc (sizeof(task_t));
-    freeTask = malloc (sizeof(task_t));
-    readyQueue = malloc (sizeof(task_t));
-    sleepQueue = malloc (sizeof(task_t));
+unsigned int _systemTime = 0;
 
-    taskMain->id = 0;
-    taskExec->id = 0;
-    taskDisp->id = 0;
-    freeTask->id = 0;
-    readyQueue->id = 0;
-    sleepQueue->id = 0;
-    taskMain->state = PPOS_TASK_STATE_EXECUTING;
-    taskExec->state = PPOS_TASK_STATE_EXECUTING;
-    taskDisp->state = PPOS_TASK_STATE_EXECUTING;
-    freeTask->state = PPOS_TASK_STATE_EXECUTING;
-    readyQueue->state = PPOS_TASK_STATE_EXECUTING;
-    sleepQueue->state = PPOS_TASK_STATE_EXECUTING;
-    taskMain->next = NULL;
-    taskExec->next = NULL;
-    taskDisp->next = NULL;
-    freeTask->next = NULL;
-    readyQueue->next = NULL;
-    sleepQueue->next = NULL;
-    taskMain->prev = NULL;
-    taskExec->prev = NULL;
-    taskDisp->prev = NULL;
-    freeTask->prev = NULL;
-    readyQueue->prev = NULL;
-    sleepQueue->prev = NULL;
-    taskMain->queue = NULL;
-    taskExec->queue = NULL;
-    taskDisp->queue = NULL;
-    freeTask->queue = NULL;
-    readyQueue->queue = NULL;
-    sleepQueue->queue = NULL;
-    taskMain->joinQueue = NULL;
-    taskExec->joinQueue = NULL;
-    taskDisp->joinQueue = NULL;
-    freeTask->joinQueue = NULL;
-    readyQueue->joinQueue = NULL;
-    sleepQueue->joinQueue = NULL;
-    taskMain->exitCode = 0;
-    taskExec->exitCode = 0;
-    taskDisp->exitCode = 0;
-    freeTask->exitCode = 0;
-    readyQueue->exitCode = 0;
-    sleepQueue->exitCode = 0;
-    taskMain->awakeTime = 0;
-    taskExec->awakeTime = 0;
-    taskDisp->awakeTime = 0;
-    freeTask->awakeTime = 0;
-    readyQueue->awakeTime = 0;
-    sleepQueue->awakeTime = 0;
-    taskMain->custom_data = NULL;
-    taskExec->custom_data = NULL;
-    taskDisp->custom_data = NULL;
-    freeTask->custom_data = NULL;
-    readyQueue->custom_data = NULL;
-    sleepQueue->custom_data = NULL;
-    taskMain->context.uc_stack.ss_sp = malloc(STACKSIZE);
-    taskMain->context.uc_stack.ss_size = STACKSIZE;
-    taskMain->context.uc_stack.ss_flags = 0;
-    taskMain->context.uc_link = 0;
-    
-}*/
+struct sigaction action;
+struct itimerval timer;
+
 
 
 
 task_t * scheduler() {
-    if (readyQueue != NULL) {
-        return readyQueue;
-    }
-    return NULL;
+    if (!readyQueue)
+        return NULL;
+
+    
+    readyQueue->quantum = 20;
+
+    readyQueue->processor_time += (systime());
+    readyQueue->activations++;
+    return readyQueue;
 }
 
-unsigned int _systemTime;
+
+
+/**************************************************TIME*******************************************************************************/
+
+
+void tratador_tick(int signum) {
+    if(!taskExec)
+        exit(-1);
+
+    if(taskExec != taskDisp) {
+        // Se houver uma tarefa em execução, decrementa seu quantum
+        if (taskExec->quantum > 0) {
+            taskExec->quantum--;
+        }
+
+        // Se o quantum chegar a zero, coloca a tarefa na fila de prontas
+        if (taskExec->quantum == 0) {
+            task_yield();
+        }
+    }
+    _systemTime++; // incrementa o relógio global a cada tick
+}
 
 unsigned int systime () {
     return _systemTime;
 }
 
+/**************************************************TIME*******************************************************************************/
+
+/**************************************************PRIO*******************************************************************************/
+
+void task_setprio (task_t *task, int prio) {
+    if (task == NULL)
+        task = taskExec;
+
+    if (prio < -20 || prio > 20)
+        exit(-1);
+
+    task->prio_est = prio;
+}
+
+int task_getprio (task_t *task) {
+    if (task == NULL)
+        task = taskExec;
+
+    return task->prio_est;
+}
+
+/**************************************************PRIO*******************************************************************************/
+
+
+
+/*************************************************ppos_init*******************************************************************************/
 
 void before_ppos_init () {
     // put your customization here
 #ifdef DEBUG
     printf("\ninit - BEFORE");
 #endif
+    // registra a ação para o sinal de timer SIGALRM
+    action.sa_handler = tratador_tick;
+    sigemptyset(&action.sa_mask);
+    action.sa_flags = 0;
+    if (sigaction(SIGALRM, &action, 0) < 0)
+    {
+        perror ("Erro em sigaction: ") ;
+        exit (1) ;
+    }
+
+    // ajusta valores do temporizador para 1 ms
+    timer.it_value.tv_usec = 1000;      // primeiro disparo, em mili-segundos (1 ms)
+    timer.it_interval.tv_usec = 1000;   // disparos subsequentes, em mili-segundos (1 ms)
+
+    // arma o temporizador ITIMER_REAL (vide man setitimer)
+    if (setitimer(ITIMER_REAL, &timer, 0) < 0)
+    {
+        perror ("Erro em setitimer: ") ;
+        exit (1) ;
+    }
 }
 
 void after_ppos_init () {
@@ -110,14 +120,25 @@ void after_ppos_init () {
 #ifdef DEBUG
     printf("\ninit - AFTER");
 #endif
-    
+    // printf("\nIniciando o sistema operacional PingPongOS... TaskMain == NULL = %d\n", taskMain == NULL);
 }
+
+/*************************************************ppos_init*******************************************************************************/
+
+
+/*************************************************task_create*****************************************************************************/
 
 void before_task_create (task_t *task ) {
     // put your customization here
 #ifdef DEBUG
     printf("\ntask_create - BEFORE - [%d]", task->id);
 #endif
+    task->prio_est = 0;
+    task->prio_din = 0;
+    task->quantum = 20;
+    task->start_time = systime();
+    task->activations = 0;
+    task->processor_time = 0;
 }
 
 void after_task_create (task_t *task ) {
@@ -125,8 +146,11 @@ void after_task_create (task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_create - AFTER - [%d]", task->id);
 #endif
-    
 }
+
+/*************************************************task_create*****************************************************************************/
+
+/**************************************************task_exit******************************************************************************/
 
 void before_task_exit () {
     // put your customization here
@@ -141,8 +165,12 @@ void after_task_exit () {
 #ifdef DEBUG
     printf("\ntask_exit - AFTER- [%d]", taskExec->id);
 #endif
-    
+    taskExec->end_time = systime();
 }
+
+/**************************************************task_exit******************************************************************************/
+
+/*************************************************task_switch*****************************************************************************/
 
 void before_task_switch ( task_t *task ) {
     // put your customization here
@@ -158,6 +186,9 @@ void after_task_switch ( task_t *task ) {
     printf("\ntask_switch - AFTER - [%d -> %d]", taskExec->id, task->id);
 #endif
 }
+
+/*************************************************task_switch*****************************************************************************/
+
 
 void before_task_yield () {
     // put your customization here

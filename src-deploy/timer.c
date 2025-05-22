@@ -1,6 +1,8 @@
 // Exemplo de uso de timer UNIX
 // Carlos Maziero, 2015
 
+#define _XOPEN_SOURCE 600
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>

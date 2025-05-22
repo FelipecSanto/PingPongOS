@@ -71,7 +71,7 @@ void after_task_exit (); // Após o retorno dessa funcao, eh realiada a troca de
 // alterna a execução para a tarefa indicada
 int task_switch (task_t *task) ;
 void before_task_switch ( task_t *task ) ;
-void after_task_switch ( task_t *task ) ; // Após o retorno dessa funcao, eh realiada a troca de 
+void after_task_switch ( task_t *task ) ; // Após o retorno dessa funcao, eh realizada a troca de 
                                           // contexto [swapcontext()] para a tarefa indicada no parâmetro
 
 

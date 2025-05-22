@@ -1,5 +1,6 @@
 # Variáveis
-TARGET ?= main  # Define "main" como valor padrão, mas permite sobrescrever
+# Define "main" como valor padrão, mas permite sobrescrever
+TARGET ?= main
 OBJS = ppos-all.o queue.o
 CC = gcc
 CFLAGS = -Wall -g
@@ -12,6 +13,9 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(SRCS) $(OBJS)
 	./$(TARGET)
+	if [ -f $(TARGET) ]; then \
+		rm -f $(TARGET); \
+	fi
 
 # Regra para compilar arquivos .o
 %.o: %.c
