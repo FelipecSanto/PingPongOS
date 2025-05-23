@@ -13,6 +13,9 @@
 //
 // ****************************************************************************
 
+// #define DEBUG
+
+int flag_start = 0;
 
 unsigned int _systemTime = 0;
 
@@ -26,34 +29,69 @@ task_t * scheduler() {
     if (!readyQueue)
         return NULL;
 
-    
+    if(flag_start == 0 && readyQueue->id == 0){
+        task_setprio(readyQueue, 0);
+        flag_start = 1;
+    }
+    task_t *aux = readyQueue->next;
+    task_t *prioritaria = readyQueue;
     readyQueue->quantum = 20;
+    int var1, var2;
 
-    readyQueue->processor_time += (systime());
+    var1 = prioritaria->prio_din;
+    var2 = aux->prio_din;
+    if( var1 > var2){
+        prioritaria = aux;
+            
+    }
+
+    while(aux != readyQueue) {
+        aux = aux->next;
+        var1 = prioritaria->prio_din;
+        var2 = aux->prio_din;
+        if(var1 > var2){
+            prioritaria = aux;
+        }
+    }
+
+    aux = readyQueue->next;
+
+    if(aux != prioritaria && aux->prio_din < -20) {
+        aux->prio_din--;
+    }
+
+    while(aux != readyQueue) {
+        aux = aux->next;
+        if(aux != prioritaria && aux->prio_din < -20) {
+            aux->prio_din--;
+        }
+    }
+
+    // readyQueue->processor_time += (systime());
     readyQueue->activations++;
-    return readyQueue;
+    return prioritaria;
 }
 
-
+//asdasdasd
 
 /**************************************************TIME*******************************************************************************/
 
 
 void tratador_tick(int signum) {
-    if(!taskExec)
-        exit(-1);
+    // if(!taskExec)
+    //     exit(-1);
 
-    if(taskExec != taskDisp) {
-        // Se houver uma tarefa em execução, decrementa seu quantum
-        if (taskExec->quantum > 0) {
-            taskExec->quantum--;
-        }
+    // if(taskExec != taskDisp) {
+    //     // Se houver uma tarefa em execução, decrementa seu quantum
+    //     if (taskExec->quantum > 0) {
+    //         taskExec->quantum--;
+    //     }
 
-        // Se o quantum chegar a zero, coloca a tarefa na fila de prontas
-        if (taskExec->quantum == 0) {
-            task_yield();
-        }
-    }
+    //     // Se o quantum chegar a zero, coloca a tarefa na fila de prontas
+    //     if (taskExec->quantum == 0) {
+    //         task_yield();
+    //     }
+    // }
     _systemTime++; // incrementa o relógio global a cada tick
 }
 
@@ -73,6 +111,7 @@ void task_setprio (task_t *task, int prio) {
         exit(-1);
 
     task->prio_est = prio;
+    task->prio_din = prio;
 }
 
 int task_getprio (task_t *task) {
@@ -133,12 +172,16 @@ void before_task_create (task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_create - BEFORE - [%d]", task->id);
 #endif
-    task->prio_est = 0;
-    task->prio_din = 0;
-    task->quantum = 20;
-    task->start_time = systime();
-    task->activations = 0;
-    task->processor_time = 0;
+    if(task){    
+        if(task->id == 0)
+            taskMain = task;
+        task->prio_est = 0;
+        task->prio_din = 0;
+        task->quantum = 20;
+        task->start_time = systime();
+        task->activations = 0;
+        task->processor_time = 0;
+    }
 }
 
 void after_task_create (task_t *task ) {
