@@ -31,12 +31,8 @@ task_t * scheduler() {
     // }
     task_t *aux = readyQueue->next;
     task_t *prioritaria = readyQueue;
-    readyQueue->quantum = 20;
-    int var1, var2;
 
-    var1 = prioritaria->prio_din;
-    var2 = aux->prio_din;
-    if( var1 > var2){
+    if(prioritaria->prio_din > aux->prio_din || (prioritaria->prio_din == aux->prio_din && task_getprio(aux) < task_getprio(prioritaria))){
         prioritaria = aux;
     }
     if(aux->id == 0){
@@ -44,9 +40,7 @@ task_t * scheduler() {
     }
     while(aux != readyQueue) {
         aux = aux->next;
-        var1 = prioritaria->prio_din;
-        var2 = aux->prio_din;
-        if(var1 > var2){
+        if(prioritaria->prio_din > aux->prio_din || (prioritaria->prio_din == aux->prio_din && task_getprio(aux) < task_getprio(prioritaria))){
             prioritaria = aux;
         }
         if(aux->id == 0){
@@ -59,7 +53,7 @@ task_t * scheduler() {
     // if (curr) {
     //     printf("Fila de prontas: ");
     //     do {
-    //         printf("[id:%d prio_din:%d > -20 = %d] ", curr->id, curr->prio_din, curr->prio_din > -20);
+    //         printf("[id:%d prio_din:%d] ", curr->id, curr->prio_din);
     //         curr = curr->next;
     //     } while (curr && curr != readyQueue);
     // }
@@ -78,6 +72,7 @@ task_t * scheduler() {
         }
     }
 
+    prioritaria->prio_din = task_getprio(prioritaria);
     return prioritaria;
 }
 
