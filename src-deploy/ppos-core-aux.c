@@ -21,6 +21,7 @@ struct sigaction action;
 struct itimerval timer;
 
 int finalizadas = 0;
+int numTasks = 0;
 
 task_t * scheduler() {
     if (!readyQueue)
@@ -38,6 +39,9 @@ task_t * scheduler() {
     if(aux->id == 0){
         task_setprio(aux, 0);
     }
+    if(aux->id > numTasks){
+        numTasks = aux->id;
+    }
     while(aux != readyQueue) {
         aux = aux->next;
         if(prioritaria->prio_din > aux->prio_din || (prioritaria->prio_din == aux->prio_din && task_getprio(aux) < task_getprio(prioritaria))){
@@ -45,6 +49,9 @@ task_t * scheduler() {
         }
         if(aux->id == 0){
             task_setprio(aux, 0);
+        }
+        if(aux->id > numTasks){
+            numTasks = aux->id;
         }
     }
 
@@ -80,20 +87,26 @@ task_t * scheduler() {
 
 
 void tratador_tick(int signum) {
-    // if(!taskExec)
-    //     exit(-1);
+    if(!taskExec)
+        exit(-1);
 
-    // if(taskExec != taskDisp) {
-    //     // Se houver uma tarefa em execução, decrementa seu quantum
-    //     if (taskExec->quantum > 0) {
-    //         taskExec->quantum--;
-    //     }
+    if(taskExec != taskDisp && taskExec != taskMain) {
+        // Se houver uma tarefa em execução, decrementa seu quantum
+        if (taskExec->quantum > 0) {
+            taskExec->quantum--;
+        }
 
-    //     // Se o quantum chegar a zero, coloca a tarefa na fila de prontas
-    //     if (taskExec->quantum == 0) {
-    //         task_yield();
-    //     }
-    // }
+        // Se o quantum chegar a zero, coloca a tarefa na fila de prontas
+        if (taskExec->quantum == 0) {
+            taskExec->state = PPOS_TASK_STATE_READY;
+            taskExec->quantum = 20;
+            taskExec->prio_din = task_getprio(taskExec);
+            task_t* nextTask = scheduler();
+            queue_append((queue_t**)&readyQueue, (queue_t*)taskExec);
+            nextTask = (task_t*)queue_remove((queue_t**)&readyQueue, (queue_t*)nextTask);
+            task_switch(nextTask);
+        }
+    }
     _systemTime++; // incrementa o relógio global a cada tick
 }
 
@@ -187,11 +200,13 @@ void before_task_create (task_t *task ) {
     //     taskMain->processor_time = 0;
     // }
     // else {
-    //     task_setprio(task, 0);
-    //     task->quantum = 20;
-    //     task->start_time = systime();
-    //     task->activations = 0;
-    //     task->processor_time = 0;
+    if(task->id != 0 && task->id != 1) {
+        task_setprio(task, 0);
+        task->quantum = 20;
+    }
+    // task->start_time = systime();
+    // task->activations = 0;
+    // task->processor_time = 0;
     // }
 }
 
@@ -246,7 +261,7 @@ void after_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - AFTER - [%d -> %d]", taskExec->id, task->id);
 #endif
-    if(finalizadas == 5) {
+    if(finalizadas > numTasks && queue_size((queue_t*)readyQueue) == 0) {
         task_exit(0);
     }
 }
