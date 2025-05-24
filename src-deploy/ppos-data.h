@@ -30,8 +30,9 @@ typedef struct task_t
 
    int prio_est, prio_din; // prioridade estatica e prioridade dinamica
 
-   unsigned int start_time, end_time, quantum, start_processor, activations, processor_time; // tempo de inicio, tempo de fim, tempo de processamento e numero de ativações
+   int start_time, end_time, quantum, start_processor, activations, processor_time; // tempo de inicio, tempo de fim, tempo de processamento e numero de ativações
    
+   int finished;
 } task_t ;
 
 // estrutura que define um semáforo

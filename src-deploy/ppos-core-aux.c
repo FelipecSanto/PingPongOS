@@ -22,10 +22,15 @@ struct itimerval timer;
 
 int finalizadas = 0;
 int numTasks = 0;
+int flag = 0;
 
-task_t * scheduler() {
-    if (!readyQueue)
-        return NULL;
+task_t * scheduler() { 
+    if (!readyQueue) {
+        if(!taskExec)
+            return NULL;
+        else
+            return taskExec;
+    }
 
     // if(readyQueue->id == 0){
     //     task_setprio(readyQueue, 20);
@@ -39,9 +44,6 @@ task_t * scheduler() {
     if(aux->id == 0){
         task_setprio(aux, 0);
     }
-    if(aux->id > numTasks){
-        numTasks = aux->id;
-    }
     while(aux != readyQueue) {
         aux = aux->next;
         if(prioritaria->prio_din > aux->prio_din || (prioritaria->prio_din == aux->prio_din && task_getprio(aux) < task_getprio(prioritaria))){
@@ -49,9 +51,6 @@ task_t * scheduler() {
         }
         if(aux->id == 0){
             task_setprio(aux, 0);
-        }
-        if(aux->id > numTasks){
-            numTasks = aux->id;
         }
     }
 
@@ -79,6 +78,7 @@ task_t * scheduler() {
         }
     }
 
+    prioritaria->quantum = 40;
     prioritaria->prio_din = task_getprio(prioritaria);
     return prioritaria;
 }
@@ -99,12 +99,14 @@ void tratador_tick(int signum) {
         // Se o quantum chegar a zero, coloca a tarefa na fila de prontas
         if (taskExec->quantum == 0) {
             taskExec->state = PPOS_TASK_STATE_READY;
-            taskExec->quantum = 20;
+            taskExec->quantum = 40;
             taskExec->prio_din = task_getprio(taskExec);
             task_t* nextTask = scheduler();
-            queue_append((queue_t**)&readyQueue, (queue_t*)taskExec);
-            nextTask = (task_t*)queue_remove((queue_t**)&readyQueue, (queue_t*)nextTask);
-            task_switch(nextTask);
+            if(nextTask != taskExec) {
+                queue_append((queue_t**)&readyQueue, (queue_t*)taskExec);
+                nextTask = (task_t*)queue_remove((queue_t**)&readyQueue, (queue_t*)nextTask);
+                task_switch(nextTask);
+            }
         }
     }
     _systemTime++; // incrementa o relógio global a cada tick
@@ -191,23 +193,7 @@ void before_task_create (task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_create - BEFORE - [%d]", task->id);
 #endif
-    // if(task->id == 0) {
-    //     taskMain = task;
-    //     task_setprio(taskMain, 0);
-    //     taskMain->quantum = 20;
-    //     taskMain->start_time = systime();
-    //     taskMain->activations = 0;
-    //     taskMain->processor_time = 0;
-    // }
-    // else {
-    if(task->id != 0 && task->id != 1) {
-        task_setprio(task, 0);
-        task->quantum = 20;
-    }
-    // task->start_time = systime();
-    // task->activations = 0;
-    // task->processor_time = 0;
-    // }
+    
 }
 
 void after_task_create (task_t *task ) {
@@ -217,6 +203,26 @@ void after_task_create (task_t *task ) {
 #endif
     if(task->id == 1) {
         taskDisp = task;
+    }
+    if(task->id != 0 && task->id != 1) {
+        if(flag != 0) {
+            numTasks++;
+        }
+        else {
+            flag = 1;
+        }
+    }
+    task->start_time = (int)systime();
+    if(task->id == 1) {
+        printf("System time: %d ms task->start_time: %d\n", systime(), task->id);
+    }
+    task->end_time = 0;
+    task->start_processor = 0;
+    task->finished = 0;
+    if(task->id != 1 && task->id != 0) {
+        task->processor_time = 0;
+        task->activations = 0;
+        task->quantum = 40;
     }
     // printf("\ntask->start_processor: %d task->activations: %d task->quantum: %d", task->start_processor, task->activations, task->quantum); 
 }
@@ -230,7 +236,6 @@ void before_task_exit () {
 #ifdef DEBUG
     printf("\ntask_exit - BEFORE - [%d]", taskExec->id);
 #endif
-
 }
 
 void after_task_exit () {
@@ -238,8 +243,15 @@ void after_task_exit () {
 #ifdef DEBUG
     printf("\ntask_exit - AFTER- [%d]", taskExec->id);
 #endif
-    // taskExec->end_time = systime();
-    finalizadas++;
+    if(taskExec->id != 1) {
+        taskExec->end_time = (int)systime();
+        finalizadas++;
+    }
+    else {
+        printf("Task->start_time: %d\n", taskExec->start_time);
+    }
+    taskExec->finished = 1;
+    printf("Task %d exit: execution time %d ms, processor time %d ms, %d activations\n", taskExec->id, taskExec->end_time - taskExec->start_time, taskExec->processor_time, taskExec->activations);
 }
 
 /**************************************************task_exit******************************************************************************/
@@ -254,6 +266,13 @@ void before_task_switch ( task_t *task ) {
     if(taskExec->id == task->id) {
         task_switch(readyQueue);
     }
+    if(taskExec->id != 1 && taskExec->id != 0 && taskExec->finished == 0) {
+        // printf("Task %d switch: start processor %d, system time %d, processor time %d ms\n", taskExec->id, taskExec->start_processor, (int)systime(), taskExec->processor_time);
+        taskExec->processor_time += ((int)systime() - taskExec->start_processor);
+        task->start_processor = (int)systime();
+        task->activations++;
+        task->quantum = 40;
+    }
 }
 
 void after_task_switch ( task_t *task ) {
@@ -261,7 +280,9 @@ void after_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - AFTER - [%d -> %d]", taskExec->id, task->id);
 #endif
-    if(finalizadas > numTasks && queue_size((queue_t*)readyQueue) == 0) {
+    // PRINT_READY_QUEUE;
+    // printf("finalizadas: %d numTasks: %d\n", finalizadas, numTasks);
+    if(finalizadas > numTasks && queue_size((queue_t*)readyQueue) == 1 && taskExec->id == 1) {
         task_exit(0);
     }
 }
@@ -335,15 +356,16 @@ void after_task_sleep () {
 int before_task_join (task_t *task) {
     // put your customization here
 #ifdef DEBUG
-    printf("\ntask_join - BEFORE - [%d]", taskExec->id);
+    printf("\ntask_join - BEFORE - [%d] espera tarefa %d", taskExec->id, task->id);
 #endif
+    
     return 0;
 }
 
 int after_task_join (task_t *task) {
     // put your customization here
 #ifdef DEBUG
-    printf("\ntask_join - AFTER - [%d]", taskExec->id);
+    printf("\ntask_join - AFTER - [%d] espera tarefa %d", taskExec->id, task->id);
 #endif
     return 0;
 }
