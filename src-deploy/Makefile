@@ -4,7 +4,7 @@ TARGET ?= main
 OBJS = ppos-all.o queue.o
 CC = gcc
 CFLAGS = -Wall -g
-SRCS = pingpong-preempcao.c ppos-core-aux.c
+SRCS = pingpong-scheduler.c ppos-core-aux.c
 
 # Regra padrão
 all: $(TARGET)

@@ -28,10 +28,10 @@ typedef struct task_t
 
    // ... (outros/novos campos deve ser adicionados APOS esse comentario)
 
-   unsigned int prio_est, prio_din, quantum; // prioridade estatica, prioridade dinamica e quantum
+   int prio_est, prio_din; // prioridade estatica e prioridade dinamica
 
-   unsigned int start_time, end_time, processor_time, activations; // tempo de inicio, tempo de fim, tempo de processamento e numero de ativações
-
+   unsigned int start_time, end_time, quantum, start_processor, activations, processor_time; // tempo de inicio, tempo de fim, tempo de processamento e numero de ativações
+   
 } task_t ;
 
 // estrutura que define um semáforo

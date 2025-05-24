@@ -15,24 +15,20 @@
 
 // #define DEBUG
 
-int flag_start = 0;
-
 unsigned int _systemTime = 0;
 
 struct sigaction action;
 struct itimerval timer;
 
-
-
+int finalizadas = 0;
 
 task_t * scheduler() {
     if (!readyQueue)
         return NULL;
 
-    if(flag_start == 0 && readyQueue->id == 0){
-        task_setprio(readyQueue, 0);
-        flag_start = 1;
-    }
+    // if(readyQueue->id == 0){
+    //     task_setprio(readyQueue, 20);
+    // }
     task_t *aux = readyQueue->next;
     task_t *prioritaria = readyQueue;
     readyQueue->quantum = 20;
@@ -42,9 +38,10 @@ task_t * scheduler() {
     var2 = aux->prio_din;
     if( var1 > var2){
         prioritaria = aux;
-            
     }
-
+    if(aux->id == 0){
+        task_setprio(aux, 0);
+    }
     while(aux != readyQueue) {
         aux = aux->next;
         var1 = prioritaria->prio_din;
@@ -52,27 +49,37 @@ task_t * scheduler() {
         if(var1 > var2){
             prioritaria = aux;
         }
+        if(aux->id == 0){
+            task_setprio(aux, 0);
+        }
     }
+
+    // printf("Trocando de tarefa: %d -> %d\n", taskExec->id, prioritaria->id);
+    // task_t *curr = readyQueue;
+    // if (curr) {
+    //     printf("Fila de prontas: ");
+    //     do {
+    //         printf("[id:%d prio_din:%d > -20 = %d] ", curr->id, curr->prio_din, curr->prio_din > -20);
+    //         curr = curr->next;
+    //     } while (curr && curr != readyQueue);
+    // }
+    // printf("\n");
 
     aux = readyQueue->next;
 
-    if(aux != prioritaria && aux->prio_din < -20) {
+    if(aux != prioritaria && aux->prio_din > -20) {
         aux->prio_din--;
     }
 
     while(aux != readyQueue) {
         aux = aux->next;
-        if(aux != prioritaria && aux->prio_din < -20) {
+        if(aux != prioritaria && aux->prio_din > -20) {
             aux->prio_din--;
         }
     }
 
-    // readyQueue->processor_time += (systime());
-    readyQueue->activations++;
     return prioritaria;
 }
-
-//asdasdasd
 
 /**************************************************TIME*******************************************************************************/
 
@@ -159,7 +166,11 @@ void after_ppos_init () {
 #ifdef DEBUG
     printf("\ninit - AFTER");
 #endif
-    // printf("\nIniciando o sistema operacional PingPongOS... TaskMain == NULL = %d\n", taskMain == NULL);
+    // printf("\ntaskDisp == NULL: %d", taskDisp == NULL);
+    // printf("\ntaskExec == NULL: %d", taskExec == NULL);
+    // printf("\ntaskMain == NULL: %d taskMain->id = %d\n", taskMain == NULL, taskMain->id);
+    // // printf("\ntaskExec->id: %d\n", taskExec->id);
+    // PRINT_READY_QUEUE
 }
 
 /*************************************************ppos_init*******************************************************************************/
@@ -172,16 +183,21 @@ void before_task_create (task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_create - BEFORE - [%d]", task->id);
 #endif
-    if(task){    
-        if(task->id == 0)
-            taskMain = task;
-        task->prio_est = 0;
-        task->prio_din = 0;
-        task->quantum = 20;
-        task->start_time = systime();
-        task->activations = 0;
-        task->processor_time = 0;
-    }
+    // if(task->id == 0) {
+    //     taskMain = task;
+    //     task_setprio(taskMain, 0);
+    //     taskMain->quantum = 20;
+    //     taskMain->start_time = systime();
+    //     taskMain->activations = 0;
+    //     taskMain->processor_time = 0;
+    // }
+    // else {
+    //     task_setprio(task, 0);
+    //     task->quantum = 20;
+    //     task->start_time = systime();
+    //     task->activations = 0;
+    //     task->processor_time = 0;
+    // }
 }
 
 void after_task_create (task_t *task ) {
@@ -189,6 +205,10 @@ void after_task_create (task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_create - AFTER - [%d]", task->id);
 #endif
+    if(task->id == 1) {
+        taskDisp = task;
+    }
+    // printf("\ntask->start_processor: %d task->activations: %d task->quantum: %d", task->start_processor, task->activations, task->quantum); 
 }
 
 /*************************************************task_create*****************************************************************************/
@@ -208,7 +228,8 @@ void after_task_exit () {
 #ifdef DEBUG
     printf("\ntask_exit - AFTER- [%d]", taskExec->id);
 #endif
-    taskExec->end_time = systime();
+    // taskExec->end_time = systime();
+    finalizadas++;
 }
 
 /**************************************************task_exit******************************************************************************/
@@ -220,7 +241,9 @@ void before_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - BEFORE - [%d -> %d]", taskExec->id, task->id);
 #endif
-    
+    if(taskExec->id == task->id) {
+        task_switch(readyQueue);
+    }
 }
 
 void after_task_switch ( task_t *task ) {
@@ -228,10 +251,15 @@ void after_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - AFTER - [%d -> %d]", taskExec->id, task->id);
 #endif
+    if(finalizadas == 5) {
+        task_exit(0);
+    }
 }
 
 /*************************************************task_switch*****************************************************************************/
 
+
+/**************************************************task_yield*****************************************************************************/
 
 void before_task_yield () {
     // put your customization here
@@ -239,12 +267,17 @@ void before_task_yield () {
     printf("\ntask_yield - BEFORE - [%d]", taskExec->id);
 #endif
 }
+
+
 void after_task_yield () {
     // put your customization here
 #ifdef DEBUG
     printf("\ntask_yield - AFTER - [%d]", taskExec->id);
 #endif
 }
+
+
+/**************************************************task_yield*****************************************************************************/
 
 
 void before_task_suspend( task_t *task ) {
