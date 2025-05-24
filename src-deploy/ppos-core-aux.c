@@ -23,6 +23,10 @@ struct itimerval timer;
 int finalizadas = 0;
 int numTasks = 0;
 int flag = 0;
+int processor_time_disp = 0;
+int start_time_dispatcher = 0;
+int activations_disp = 0;
+int start_processor_disp = 0;
 
 task_t * scheduler() { 
     if (!readyQueue) {
@@ -78,7 +82,7 @@ task_t * scheduler() {
         }
     }
 
-    prioritaria->quantum = 40;
+    prioritaria->quantum = 20;
     prioritaria->prio_din = task_getprio(prioritaria);
     return prioritaria;
 }
@@ -99,12 +103,13 @@ void tratador_tick(int signum) {
         // Se o quantum chegar a zero, coloca a tarefa na fila de prontas
         if (taskExec->quantum == 0) {
             taskExec->state = PPOS_TASK_STATE_READY;
-            taskExec->quantum = 40;
+            taskExec->quantum = 20;
             taskExec->prio_din = task_getprio(taskExec);
             task_t* nextTask = scheduler();
             if(nextTask != taskExec) {
                 queue_append((queue_t**)&readyQueue, (queue_t*)taskExec);
                 nextTask = (task_t*)queue_remove((queue_t**)&readyQueue, (queue_t*)nextTask);
+                activations_disp++;
                 task_switch(nextTask);
             }
         }
@@ -179,7 +184,7 @@ void after_ppos_init () {
     // printf("\ntaskDisp == NULL: %d", taskDisp == NULL);
     // printf("\ntaskExec == NULL: %d", taskExec == NULL);
     // printf("\ntaskMain == NULL: %d taskMain->id = %d\n", taskMain == NULL, taskMain->id);
-    // // printf("\ntaskExec->id: %d\n", taskExec->id);
+    // printf("\ntaskExec->id: %d\n", taskExec->id);
     // PRINT_READY_QUEUE
 }
 
@@ -213,16 +218,13 @@ void after_task_create (task_t *task ) {
         }
     }
     task->start_time = (int)systime();
-    if(task->id == 1) {
-        printf("System time: %d ms task->start_time: %d\n", systime(), task->id);
-    }
     task->end_time = 0;
     task->start_processor = 0;
     task->finished = 0;
     if(task->id != 1 && task->id != 0) {
         task->processor_time = 0;
         task->activations = 0;
-        task->quantum = 40;
+        task->quantum = 20;
     }
     // printf("\ntask->start_processor: %d task->activations: %d task->quantum: %d", task->start_processor, task->activations, task->quantum); 
 }
@@ -243,15 +245,18 @@ void after_task_exit () {
 #ifdef DEBUG
     printf("\ntask_exit - AFTER- [%d]", taskExec->id);
 #endif
+    if(taskExec->id == 1) {
+        int end_time_dispatcher = (int)systime();
+        printf("Task 1 exit: execution time %d ms, processor time %d ms, %d activations\n", end_time_dispatcher - start_time_dispatcher , processor_time_disp, activations_disp);
+    }
     if(taskExec->id != 1) {
         taskExec->end_time = (int)systime();
         finalizadas++;
     }
-    else {
-        printf("Task->start_time: %d\n", taskExec->start_time);
-    }
     taskExec->finished = 1;
-    printf("Task %d exit: execution time %d ms, processor time %d ms, %d activations\n", taskExec->id, taskExec->end_time - taskExec->start_time, taskExec->processor_time, taskExec->activations);
+    if (taskExec->id != 1) {
+        printf("Task %d exit: execution time %d ms, processor time %d ms, %d activations\n", taskExec->id, taskExec->end_time - taskExec->start_time, taskExec->processor_time, taskExec->activations);
+    }
 }
 
 /**************************************************task_exit******************************************************************************/
@@ -270,8 +275,15 @@ void before_task_switch ( task_t *task ) {
         // printf("Task %d switch: start processor %d, system time %d, processor time %d ms\n", taskExec->id, taskExec->start_processor, (int)systime(), taskExec->processor_time);
         taskExec->processor_time += ((int)systime() - taskExec->start_processor);
         task->start_processor = (int)systime();
-        task->activations++;
-        task->quantum = 40;
+        task->activations++; // Scheduler funciona sem essas duas linhas
+        task->quantum = 20;  // Scheduler funciona sem essas duas linhas
+    }
+    if(taskExec->id == 1) {
+        processor_time_disp += ((int)systime() - start_processor_disp);
+    }
+    if(task->id == 1) {
+        start_processor_disp = (int)systime();
+        activations_disp++;
     }
 }
 
