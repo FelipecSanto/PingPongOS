@@ -28,6 +28,13 @@ int start_time_dispatcher = 0;
 int activations_disp = 0;
 int start_processor_disp = 0;
 
+
+#ifdef SCHEDULER_MODE
+    int modo_scheduler = SCHEDULER_MODE;
+#else
+    int modo_scheduler = 0;
+#endif
+
 task_t * scheduler() { 
     if (!readyQueue) {
         if(!taskExec)
@@ -177,11 +184,7 @@ void before_ppos_init () {
 }
 
 void after_ppos_init () {
-    // put your customization here
-#ifdef DEBUG
-    printf("\ninit - AFTER");
-#endif
-    // printf("\ntaskDisp == NULL: %d", taskDisp == NULL);
+    // put your customization hereaskDisp == NULL);
     // printf("\ntaskExec == NULL: %d", taskExec == NULL);
     // printf("\ntaskMain == NULL: %d taskMain->id = %d\n", taskMain == NULL, taskMain->id);
     // printf("\ntaskExec->id: %d\n", taskExec->id);
@@ -247,7 +250,9 @@ void after_task_exit () {
 #endif
     if(taskExec->id == 1) {
         int end_time_dispatcher = (int)systime();
-        printf("Task 1 exit: execution time %d ms, processor time %d ms, %d activations\n", end_time_dispatcher - start_time_dispatcher , processor_time_disp, activations_disp);
+        if(modo_scheduler == 0) {
+            printf("Task 1 exit: execution time %d ms, processor time %d ms, %d activations\n", end_time_dispatcher - start_time_dispatcher , processor_time_disp, activations_disp);
+        }
     }
     if(taskExec->id != 1) {
         taskExec->end_time = (int)systime();
@@ -255,7 +260,9 @@ void after_task_exit () {
     }
     taskExec->finished = 1;
     if (taskExec->id != 1) {
-        printf("Task %d exit: execution time %d ms, processor time %d ms, %d activations\n", taskExec->id, taskExec->end_time - taskExec->start_time, taskExec->processor_time, taskExec->activations);
+        if(modo_scheduler == 0) {
+            printf("Task %d exit: execution time %d ms, processor time %d ms, %d activations\n", taskExec->id, taskExec->end_time - taskExec->start_time, taskExec->processor_time, taskExec->activations);
+        }
     }
 }
 
@@ -268,6 +275,7 @@ void before_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - BEFORE - [%d -> %d]", taskExec->id, task->id);
 #endif
+// Agora você pode usar 'modo_scheduler' normalmente no seu código
     if(taskExec->id == task->id) {
         task_switch(readyQueue);
     }
@@ -275,8 +283,11 @@ void before_task_switch ( task_t *task ) {
         // printf("Task %d switch: start processor %d, system time %d, processor time %d ms\n", taskExec->id, taskExec->start_processor, (int)systime(), taskExec->processor_time);
         taskExec->processor_time += ((int)systime() - taskExec->start_processor);
         task->start_processor = (int)systime();
-        task->activations++; // Scheduler funciona sem essas duas linhas
-        task->quantum = 20;  // Scheduler funciona sem essas duas linhas
+
+        if(modo_scheduler == 0) {
+            task->activations++;
+            task->quantum = 20;
+        }
     }
     if(taskExec->id == 1) {
         processor_time_disp += ((int)systime() - start_processor_disp);

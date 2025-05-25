@@ -4,20 +4,37 @@ TARGET ?= main
 OBJS = ppos-all.o queue.o
 CC = gcc
 CFLAGS = -Wall -g
-SRCS = pingpong-contab-prio.c ppos-core-aux.c
+SRCS = ppos-core-aux.c
+
+# Alvos para cada teste
+scheduler: pingpong-scheduler.c $(SRCS) $(OBJS)
+	$(CC) -DSCHEDULER_MODE=1 -o scheduler pingpong-scheduler.c $(SRCS) $(OBJS)
+	./scheduler
+	rm -f scheduler
+
+preempcao: pingpong-preempcao.c $(SRCS) $(OBJS)
+	$(CC) -o preempcao pingpong-preempcao.c $(SRCS) $(OBJS)
+	./preempcao
+	rm -f preempcao
+
+preempcao-stress: pingpong-preempcao-stress.c $(SRCS) $(OBJS)
+	$(CC) -o preempcao-stress pingpong-preempcao-stress.c $(SRCS) $(OBJS)
+	./preempcao-stress
+	rm -f preempcao-stress
+
+contab-prio: pingpong-contab-prio.c $(SRCS) $(OBJS)
+	$(CC) -o contab-prio pingpong-contab-prio.c $(SRCS) $(OBJS)
+	./contab-prio
+	rm -f contab-prio
 
 # Regra padrão
 all: $(TARGET)
 
-# Regra para compilar o executável e executar automaticamente
 $(TARGET): $(OBJS)
-	$(CC) -o $(TARGET) $(SRCS) $(OBJS)
+	$(CC) -o $(TARGET) pingpong-contab-prio.c $(SRCS) $(OBJS)
 	./$(TARGET)
-	if [ -f $(TARGET) ]; then \
-		rm -f $(TARGET); \
-	fi
+	rm -f $(TARGET)
 
-# Regra para compilar arquivos .o
 %.o: %.c
 	$(CC) -c $< -o $@ $(CFLAGS)
 
