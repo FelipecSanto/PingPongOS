@@ -13,7 +13,6 @@
 //
 // ****************************************************************************
 
-// #define DEBUG
 
 unsigned int _systemTime = 0;
 
@@ -43,12 +42,9 @@ task_t * scheduler() {
             return taskExec;
     }
 
-    // if(readyQueue->id == 0){
-    //     task_setprio(readyQueue, 20);
-    // }
+    // Escolhe a tarefa com menor prioridade dinâmica (mais importante), e se tiver duas tarefas com a menor prioridade dinamica, escolhe a de menor prioridade estática (mais importante)
     task_t *aux = readyQueue->next;
     task_t *prioritaria = readyQueue;
-
     if(prioritaria->prio_din > aux->prio_din || (prioritaria->prio_din == aux->prio_din && task_getprio(aux) < task_getprio(prioritaria))){
         prioritaria = aux;
     }
@@ -65,23 +61,11 @@ task_t * scheduler() {
         }
     }
 
-    // printf("Trocando de tarefa: %d -> %d\n", taskExec->id, prioritaria->id);
-    // task_t *curr = readyQueue;
-    // if (curr) {
-    //     printf("Fila de prontas: ");
-    //     do {
-    //         printf("[id:%d prio_din:%d] ", curr->id, curr->prio_din);
-    //         curr = curr->next;
-    //     } while (curr && curr != readyQueue);
-    // }
-    // printf("\n");
-
+    // Envelhece as tarefas na fila de prontas, tirando a escolhida, decrementando a prioridade dinâmica delas (desde que continue sendo >= -20)
     aux = readyQueue->next;
-
     if(aux != prioritaria && aux->prio_din > -20) {
         aux->prio_din--;
     }
-
     while(aux != readyQueue) {
         aux = aux->next;
         if(aux != prioritaria && aux->prio_din > -20) {
@@ -89,8 +73,8 @@ task_t * scheduler() {
         }
     }
 
-    prioritaria->quantum = 20;
-    prioritaria->prio_din = task_getprio(prioritaria);
+    prioritaria->quantum = 20;  // reinicia o quantum da tarefa escolhida
+    prioritaria->prio_din = task_getprio(prioritaria); // reinicia a prioridade da tarefa escolhida
     return prioritaria;
 }
 
@@ -110,13 +94,15 @@ void tratador_tick(int signum) {
         // Se o quantum chegar a zero, coloca a tarefa na fila de prontas
         if (taskExec->quantum == 0) {
             taskExec->state = PPOS_TASK_STATE_READY;
-            taskExec->quantum = 20;
-            taskExec->prio_din = task_getprio(taskExec);
-            task_t* nextTask = scheduler();
+            taskExec->quantum = 20; // reinicia o quantum
+            taskExec->prio_din = task_getprio(taskExec); // reinicia a prioridade
+            task_t* nextTask = scheduler(); // chama o escalonador
+
+            // Se não houver tarefa na fila de prontas, não entra no if a seguir e continua a execução da tarefa atual
             if(nextTask != taskExec) {
-                queue_append((queue_t**)&readyQueue, (queue_t*)taskExec);
-                nextTask = (task_t*)queue_remove((queue_t**)&readyQueue, (queue_t*)nextTask);
-                activations_disp++;
+                queue_append((queue_t**)&readyQueue, (queue_t*)taskExec);   // coloca a tarefa atual na fila de prontas
+                nextTask = (task_t*)queue_remove((queue_t**)&readyQueue, (queue_t*)nextTask);   // remove a tarefa do escalonador
+                activations_disp++;     // incrementa o número de ativações do dispatcher (pois fazer o task_switch para ele não funciona por algum motivo)
                 task_switch(nextTask);
             }
         }
@@ -184,11 +170,10 @@ void before_ppos_init () {
 }
 
 void after_ppos_init () {
-    // put your customization hereaskDisp == NULL);
-    // printf("\ntaskExec == NULL: %d", taskExec == NULL);
-    // printf("\ntaskMain == NULL: %d taskMain->id = %d\n", taskMain == NULL, taskMain->id);
-    // printf("\ntaskExec->id: %d\n", taskExec->id);
-    // PRINT_READY_QUEUE
+    // put your customization here
+#ifdef DEBUG
+    printf("\ninit - AFTER");
+#endif
 }
 
 /*************************************************ppos_init*******************************************************************************/
@@ -209,9 +194,12 @@ void after_task_create (task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_create - AFTER - [%d]", task->id);
 #endif
+    // Inicializa o ponteiro global para a tarefa dispatcher
     if(task->id == 1) {
         taskDisp = task;
     }
+
+    // Conta quantas tarefas foram criadas além do dispatcher e da main (para poder finalizar o dispatcher antes da main)
     if(task->id != 0 && task->id != 1) {
         if(flag != 0) {
             numTasks++;
@@ -220,6 +208,8 @@ void after_task_create (task_t *task ) {
             flag = 1;
         }
     }
+
+    // Inicializa os campos da tarefa criada
     task->start_time = (int)systime();
     task->end_time = 0;
     task->start_processor = 0;
@@ -229,7 +219,6 @@ void after_task_create (task_t *task ) {
         task->activations = 0;
         task->quantum = 20;
     }
-    // printf("\ntask->start_processor: %d task->activations: %d task->quantum: %d", task->start_processor, task->activations, task->quantum); 
 }
 
 /*************************************************task_create*****************************************************************************/
@@ -248,17 +237,22 @@ void after_task_exit () {
 #ifdef DEBUG
     printf("\ntask_exit - AFTER- [%d]", taskExec->id);
 #endif
+    // Se a tarefa for o dispatcher, imprime as contabilizações dela (separado do resto porque seus campos da TCB tem comportamento anômalo)
     if(taskExec->id == 1) {
         int end_time_dispatcher = (int)systime();
         if(modo_scheduler == 0) {
             printf("Task 1 exit: execution time %d ms, processor time %d ms, %d activations\n", end_time_dispatcher - start_time_dispatcher , processor_time_disp, activations_disp);
         }
     }
+
+    // Conta o número de tarefas finalizadas e o tempo final delas (tirando o dispatcher e a main)
     if(taskExec->id != 1) {
         taskExec->end_time = (int)systime();
         finalizadas++;
     }
-    taskExec->finished = 1;
+    taskExec->finished = 1; // Marca a tarefa como finalizada
+
+    // Imprime as contabilizações de cada tarefa (separado do dispatcher porque seus campos da TCB tem comportamento anômalo)
     if (taskExec->id != 1) {
         if(modo_scheduler == 0) {
             printf("Task %d exit: execution time %d ms, processor time %d ms, %d activations\n", taskExec->id, taskExec->end_time - taskExec->start_time, taskExec->processor_time, taskExec->activations);
@@ -275,26 +269,29 @@ void before_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - BEFORE - [%d -> %d]", taskExec->id, task->id);
 #endif
-// Agora você pode usar 'modo_scheduler' normalmente no seu código
+    // if para executar a main caso só tenha o dispatcher e main sobrando de não finalizadas
     if(taskExec->id == task->id) {
         task_switch(readyQueue);
     }
+
+    // Se a tarefa atual não for o dispatcher, incrementa o tempo de processamento da tarefa e o numero de ativações dela
     if(taskExec->id != 1 && taskExec->id != 0 && taskExec->finished == 0) {
-        // printf("Task %d switch: start processor %d, system time %d, processor time %d ms\n", taskExec->id, taskExec->start_processor, (int)systime(), taskExec->processor_time);
         taskExec->processor_time += ((int)systime() - taskExec->start_processor);
         task->start_processor = (int)systime();
 
         if(modo_scheduler == 0) {
             task->activations++;
-            task->quantum = 20;
         }
     }
+
+    // Se a tarefa atual for o dispatcher, incrementa o tempo de processamento dela
     if(taskExec->id == 1) {
         processor_time_disp += ((int)systime() - start_processor_disp);
     }
+
+    // Se a tarefa que está sendo chamada for o dispatcher, inicializa o tempo de início dela no processador
     if(task->id == 1) {
         start_processor_disp = (int)systime();
-        activations_disp++;
     }
 }
 
@@ -303,17 +300,13 @@ void after_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - AFTER - [%d -> %d]", taskExec->id, task->id);
 #endif
-    // PRINT_READY_QUEUE;
-    // printf("finalizadas: %d numTasks: %d\n", finalizadas, numTasks);
+    // Se a tarefa atual for o dispatcher e tiver só o dispatcher e a main na fila de prontas finaliza o dispatcher
     if(finalizadas > numTasks && queue_size((queue_t*)readyQueue) == 1 && taskExec->id == 1) {
         task_exit(0);
     }
 }
 
 /*************************************************task_switch*****************************************************************************/
-
-
-/**************************************************task_yield*****************************************************************************/
 
 void before_task_yield () {
     // put your customization here
@@ -322,17 +315,12 @@ void before_task_yield () {
 #endif
 }
 
-
 void after_task_yield () {
     // put your customization here
 #ifdef DEBUG
     printf("\ntask_yield - AFTER - [%d]", taskExec->id);
 #endif
 }
-
-
-/**************************************************task_yield*****************************************************************************/
-
 
 void before_task_suspend( task_t *task ) {
     // put your customization here
@@ -381,7 +369,6 @@ int before_task_join (task_t *task) {
 #ifdef DEBUG
     printf("\ntask_join - BEFORE - [%d] espera tarefa %d", taskExec->id, task->id);
 #endif
-    
     return 0;
 }
 
