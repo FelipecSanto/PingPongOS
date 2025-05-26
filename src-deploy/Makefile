@@ -13,12 +13,12 @@ scheduler: pingpong-scheduler.c $(SRCS) $(OBJS)
 	rm -f scheduler
 
 preempcao: pingpong-preempcao.c $(SRCS) $(OBJS)
-	$(CC) -o preempcao pingpong-preempcao.c $(SRCS) $(OBJS)
+	$(CC) -DSCHEDULER_MODE=1 -o preempcao pingpong-preempcao.c $(SRCS) $(OBJS)
 	./preempcao
 	rm -f preempcao
 
 preempcao-stress: pingpong-preempcao-stress.c $(SRCS) $(OBJS)
-	$(CC) -o preempcao-stress pingpong-preempcao-stress.c $(SRCS) $(OBJS)
+	$(CC) -DSCHEDULER_MODE=1 -o preempcao-stress pingpong-preempcao-stress.c $(SRCS) $(OBJS)
 	./preempcao-stress
 	rm -f preempcao-stress
 
