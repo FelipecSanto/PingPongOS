@@ -40,7 +40,7 @@ typedef struct {
     diskrequest_t* requestQueue;
 } disk_t;
 
-
+extern disk_t* disco;
 
 // inicializacao do gerente de disco
 // retorna -1 em erro ou 0 em sucesso
