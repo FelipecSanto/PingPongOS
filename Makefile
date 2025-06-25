@@ -31,9 +31,31 @@ contab-prio: src/parteA/pingpong-contab-prio.c $(OBJS)
 	@rm -f contab-prio
 
 disc1: src/parteB/pingpong-disco1.c $(OBJS)
-	@$(CC) -o disc1 src/parteB/pingpong-disco1.c $(OBJS) $(CFLAGS)
+	@$(CC) -o disc1 src/parteB/pingpong-disco1.c $(OBJS) $(CFLAGS) -lrt
 	@./disc1 || (echo "Deu ruim"; rm -f disc1)
 	@rm -f disc1
+	@cp disk_original.dat disk.dat
+
+disc2: src/parteB/pingpong-disco2.c $(OBJS)
+	@cp disk_original.dat disk.dat
+	@$(CC) -o disc2 src/parteB/pingpong-disco2.c $(OBJS) $(CFLAGS) -lrt
+	@./disc2 > saida_terminal.txt || (echo "Deu ruim"; rm -f disc2)
+	@rm -f disc2
+	@cp disk_original.dat disk.dat
+
+restore-disk:
+	@cp disk_original.dat disk.dat
+
+
+# prodcons: src/parteB/pingpong-prodcons.c $(OBJS)
+# 	@$(CC) -o prodcons src/parteB/pingpong-prodcons.c $(OBJS) $(CFLAGS) -lrt
+# 	@./prodcons || (echo "Deu ruim"; rm -f prodcons)
+# 	@rm -f prodcons
+
+# racecond: src/parteB/pingpong-racecond.c $(OBJS)
+# 	@$(CC) -o racecond src/parteB/pingpong-racecond.c $(OBJS) $(CFLAGS) -lrt
+# 	@./racecond || (echo "Deu ruim"; rm -f racecond)
+# 	@rm -f racecond
 
 # Regra padrão
 all: $(TARGET)

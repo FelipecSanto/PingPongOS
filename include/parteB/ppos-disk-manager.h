@@ -55,6 +55,6 @@ int disk_block_read (int block, void *buffer) ;
 int disk_block_write (int block, void *buffer) ;
 
 // escalonador de requisições do disco
-diskrequest_t* disk_scheduler();
+diskrequest_t* disk_scheduler(diskrequest_t* request) ;
 
 #endif

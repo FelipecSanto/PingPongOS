@@ -26,6 +26,8 @@ int finalizadas = 0;
 
 // Variáveis globais para os dados do dispatcher
 int start_time_dispatcher = 0, end_time_dispatcher = 0, activations_disp = 0, processor_time_disp = 0, start_processor_disp = 0, finished_disp = 0;
+// Variáveis globais para os dados da main
+int start_time_main = 0, end_time_main = 0, activations_main = 0, processor_time_main = 0, start_processor_main = 0, finished_main = 0;
 
 // Variavel para saber se está usando o pingpong-scheduler.c
 #ifdef SCHEDULER_MODE
@@ -83,15 +85,12 @@ task_t * scheduler() {
 
 /*************************************************PARTE B*****************************************************************************/
 
-diskrequest_t* disk_scheduler() {
+diskrequest_t* disk_scheduler(diskrequest_t* request) {
     if(!disco) {
-        if (!disco->requestQueue) {
-            return NULL; // Se não houver requisições, retorna NULL
-        }
-        return disco->requestQueue;
-    } else {
         printf("\nErro: Disco não inicializado.\n");
         exit(1);
+    } else {
+        return request;
     }
 }
 
@@ -181,11 +180,6 @@ void after_ppos_init () {
 #ifdef DEBUG
     printf("\ninit - AFTER");
 #endif
-    disco = (disk_t*) malloc(sizeof(disk_t));
-    if(!disco) {
-        printf("Erro ao alocar disco.\n");
-        exit(1);
-    }
 }
 
 /*************************************************ppos_init*******************************************************************************/
@@ -215,8 +209,9 @@ void after_task_create (task_t *task ) {
         task->processor_time = 0;
         task->activations = 0;
         task->quantum = 20;
-    }
-    else if (task->id == 1) {
+    } else if (task->id == 0) {
+        start_time_main = (int)systime();
+    } else if (task->id == 1) {
         start_processor_disp = (int)systime();
     }
 }
@@ -250,6 +245,17 @@ void after_task_exit () {
             printf("Task %d exit: execution time %d ms, processor time %d ms, %d activations\n", taskExec->id, taskExec->end_time - taskExec->start_time, taskExec->processor_time, taskExec->activations);
         }
     }
+
+    // Se a tarefa atual for a main, marca ela como finalizada e imprime as contabilizações dela
+    if(taskExec->id == 0) {
+        finished_main = 1;
+        end_time_main = (int)systime();
+        finalizadas++;
+        if(modo_scheduler == 0) {
+            printf("Task 0 exit: execution time %d ms, processor time %d ms, %d activations\n", end_time_main - start_time_main, processor_time_main, activations_main);
+        }
+    }
+
     // Se a tarefa for o dispatcher, imprime as contabilizações dela (separado do resto porque seus campos da TCB tem comportamento anômalo)
     if(taskExec->id == 1) {
         end_time_dispatcher = (int)systime();
@@ -269,29 +275,44 @@ void before_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - BEFORE - [%d -> %d]", taskExec->id, task->id);
 #endif
-    // Se a tarefa que está parando de executar e a que vai começar a executar não forem o dispatcher nem a main
+
+/*****************************************TAREFA ATUAL QUE ESTÁ SAINDO********************************************************************/
+
+    // Se a tarefa que está parando de executar não for o dispatcher nem a main
     if(taskExec->id != 1 && taskExec->id != 0 && taskExec->finished == 0) {
-        // Incrementa o tempo de processamento da tarefa usando o tempo que ela começou a executar e o tempo atual do processador
         taskExec->processor_time += ((int)systime() - taskExec->start_processor);
-    }
-
-    // Se a tarefa que está parando de executar e a que vai começar a executar não forem o dispatcher nem a main
-    if(task->id != 1 && task->id != 0 && task->finished == 0) {
-        // Guarda o tempo de início da tarefa no processador e incrementa o número de ativações dela
-        task->start_processor = (int)systime();
-        task->activations++;
-    }
-
-    // Se a tarefa atual for o dispatcher, incrementa o tempo de processamento dela
-    if(taskExec->id == 1 && finished_disp == 0) {
+    } 
+    // Se a tarefa que está parando de executar for a main
+    else if(taskExec->id == 0 && finished_main == 0) {
+        processor_time_main += ((int)systime() - start_processor_main);
+    } 
+    // Se a tarefa que está parando de executar for o dispatcher, 
+    else if(taskExec->id == 1 && finished_disp == 0) {
         processor_time_disp += ((int)systime() - start_processor_disp);
     }
 
-    // Se a tarefa que está sendo chamada for o dispatcher, inicializa o tempo de início dela no processador e o numero de ativações dela
-    if(task->id == 1 && finished_disp == 0) {
+/*****************************************TAREFA ATUAL QUE ESTÁ SAINDO********************************************************************/
+
+
+/*************************************TAREFA QUE ESTÁ COMEÇANDO A EXECUTAR****************************************************************/
+
+    // Se a tarefa que está começando a executar não for o dispatcher nem a main
+    if(task->id != 1 && task->id != 0 && task->finished == 0) {
+        task->start_processor = (int)systime();
+        task->activations++;
+    } 
+    // Se a tarefa que está começando a executar for a main, guarda o tempo de início dela no processador e incrementa o número de ativações dela
+    else if(task->id == 0 && finished_main == 0) {
+        start_processor_main = (int)systime();
+        activations_main++;
+    }
+    // Se a tarefa que está começando a executar for o dispatcher, guarda o tempo de início dela no processador e incrementa o número de ativações dela
+    else if(task->id == 1 && finished_disp == 0) {
         start_processor_disp = (int)systime();
         activations_disp++;
     }
+
+/*************************************TAREFA QUE ESTÁ COMEÇANDO A EXECUTAR****************************************************************/
 }
 
 void after_task_switch ( task_t *task ) {
@@ -300,9 +321,9 @@ void after_task_switch ( task_t *task ) {
     printf("\ntask_switch - AFTER - [%d -> %d]", taskExec->id, task->id);
 #endif
     // Se a tarefa atual for o dispatcher e tiver só o dispatcher e a main na fila de prontas finaliza o dispatcher
-    if(countTasks <= 1 && finalizadas > 0 && taskExec->id == 1) {
-        task_exit(0);
-    }
+    // if(countTasks <= 1 && finalizadas > 0 && taskExec->id == 1) {
+    //     task_exit(0);
+    // }
 }
 
 /*************************************************task_switch*****************************************************************************/
