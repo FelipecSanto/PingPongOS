@@ -11,35 +11,36 @@ $(shell mkdir -p objects)
 
 # Alvos para cada teste
 scheduler: src/parteA/pingpong-scheduler.c $(OBJS)
-	@$(CC) -DSCHEDULER_MODE=1 -o scheduler src/parteA/pingpong-scheduler.c $(OBJS) $(CFLAGS)
+	@$(CC) -DSCHEDULER_MODE=1 -DPARTE_A=1 -o scheduler src/parteA/pingpong-scheduler.c $(OBJS) $(CFLAGS)
 	@./scheduler || (echo "Deu ruim"; rm -f scheduler)
 	@rm -f scheduler
 
 preempcao: src/parteA/pingpong-preempcao.c $(OBJS)
-	@$(CC) -DSCHEDULER_MODE=1 -o preempcao src/parteA/pingpong-preempcao.c $(OBJS) $(CFLAGS)
+	@$(CC) -DSCHEDULER_MODE=1 -DPARTE_A=1 -o preempcao src/parteA/pingpong-preempcao.c $(OBJS) $(CFLAGS)
 	@./preempcao || (echo "Deu ruim"; rm -f preempcao)
 	@rm -f preempcao
 
 preempcao-stress: src/parteA/pingpong-preempcao-stress.c $(OBJS)
-	@$(CC) -DSCHEDULER_MODE=1 -o preempcao-stress src/parteA/pingpong-preempcao-stress.c $(OBJS) $(CFLAGS)
+	@$(CC) -DSCHEDULER_MODE=1 -DPARTE_A=1 -o preempcao-stress src/parteA/pingpong-preempcao-stress.c $(OBJS) $(CFLAGS)
 	@./preempcao-stress || (echo "Deu ruim"; rm -f preempcao-stress)
 	@rm -f preempcao-stress
 
 contab-prio: src/parteA/pingpong-contab-prio.c $(OBJS)
-	@$(CC) -o contab-prio src/parteA/pingpong-contab-prio.c $(OBJS) $(CFLAGS)
+	@$(CC) -DPARTE_A=1 -o contab-prio src/parteA/pingpong-contab-prio.c $(OBJS) $(CFLAGS)
 	@./contab-prio || (echo "Deu ruim"; rm -f contab-prio)
 	@rm -f contab-prio
 
 disc1: src/parteB/pingpong-disco1.c $(OBJS)
+	@cp disk_original.dat disk.dat
 	@$(CC) -o disc1 src/parteB/pingpong-disco1.c $(OBJS) $(CFLAGS) -lrt
-	@./disc1 || (echo "Deu ruim"; rm -f disc1)
+	@./disc1 > saida_terminal_disk1.txt || (echo "Deu ruim"; rm -f disc1)
 	@rm -f disc1
 	@cp disk_original.dat disk.dat
 
 disc2: src/parteB/pingpong-disco2.c $(OBJS)
 	@cp disk_original.dat disk.dat
 	@$(CC) -o disc2 src/parteB/pingpong-disco2.c $(OBJS) $(CFLAGS) -lrt
-	@./disc2 > saida_terminal.txt || (echo "Deu ruim"; rm -f disc2)
+	@./disc2 > saida_terminal_disk2.txt || (echo "Deu ruim"; rm -f disc2)
 	@rm -f disc2
 	@cp disk_original.dat disk.dat
 
@@ -61,7 +62,7 @@ restore-disk:
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	@$(CC) -o $(TARGET) src/parteA/pingpong-contab-prio.c $(OBJS) $(CFLAGS)
+	@$(CC) -DPARTE_A=1 -o $(TARGET) src/parteA/pingpong-contab-prio.c $(OBJS) $(CFLAGS)
 	@./$(TARGET)
 	@rm -f $(TARGET)
 

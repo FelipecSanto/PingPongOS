@@ -13,7 +13,7 @@
 //
 // ****************************************************************************
 
-// #define DEBUG 1
+#define DEBUG 1
 
 unsigned int _systemTime = 0;
 
@@ -34,6 +34,12 @@ int start_time_main = 0, end_time_main = 0, activations_main = 0, processor_time
     int modo_scheduler = SCHEDULER_MODE;
 #else
     int modo_scheduler = 0;
+#endif
+
+#ifdef PARTE_A
+    int modo_parte_a = 1;
+#else
+    int modo_parte_a = 0;
 #endif
 
 task_t * scheduler() { 
@@ -308,6 +314,7 @@ void before_task_switch ( task_t *task ) {
     }
     // Se a tarefa que está começando a executar for o dispatcher, guarda o tempo de início dela no processador e incrementa o número de ativações dela
     else if(task->id == 1 && finished_disp == 0) {
+        // printf("\nDispatcher ativado\n");
         start_processor_disp = (int)systime();
         activations_disp++;
     }
@@ -320,10 +327,12 @@ void after_task_switch ( task_t *task ) {
 #ifdef DEBUG
     printf("\ntask_switch - AFTER - [%d -> %d]", taskExec->id, task->id);
 #endif
-    // Se a tarefa atual for o dispatcher e tiver só o dispatcher e a main na fila de prontas finaliza o dispatcher
-    // if(countTasks <= 1 && finalizadas > 0 && taskExec->id == 1) {
-    //     task_exit(0);
-    // }
+    if(modo_parte_a) {
+        // Se a tarefa atual for o dispatcher e tiver só o dispatcher e a main na fila de prontas finaliza o dispatcher
+        if(countTasks <= 1 && finalizadas > 0 && taskExec->id == 1) {
+            task_exit(0);
+        }
+    }
 }
 
 /*************************************************task_switch*****************************************************************************/
