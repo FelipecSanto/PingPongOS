@@ -13,7 +13,7 @@
 //
 // ****************************************************************************
 
-#define DEBUG 1
+// #define DEBUG 1
 
 unsigned int _systemTime = 0;
 
@@ -91,14 +91,49 @@ task_t * scheduler() {
 
 /*************************************************PARTE B*****************************************************************************/
 
+#define FCFS   0
+#define SSTF   1 //tem que por isso dps la no makefile, nao sei fazer isso
+#define CSCAN  2
+
+int politica_disco = 0;  //so para f
+
+int cabeca_do_disco = 0;
+
+int blocos_percorridos = 0;
+
+
 diskrequest_t* disk_scheduler(diskrequest_t* request) {
-    if(!disco) {
-        printf("\nErro: Disco não inicializado.\n");
-        exit(1);
-    } else {
-        return request;
+    int dist;
+    if (!request)
+        return NULL;
+
+    diskrequest_t* retorno = NULL;
+
+    if (politica_disco == FCFS) {
+        retorno = request;
     }
+    else if (politica_disco == SSTF) {
+        int menor_dist = 99999999;
+        for (diskrequest_t* r = request->next; r != request || retorno == NULL; r = r->next) {
+            dist = abs(r->block - request->block);
+            if (dist < menor_dist) {
+                menor_dist = dist;
+                retorno = r;
+                printf("\n%d dist minima\n", dist);
+                
+            }
+            printf("\n%d dist atual\n", dist);
+        }
+        
+        
+    }
+    dist = abs(retorno->block - request->block);
+    printf("\n%d foi a distancia percorrida entre o request e o bloco retornado\n", dist);
+    blocos_percorridos += dist;
+
+    return retorno;
 }
+
 
 /*************************************************PARTE B*****************************************************************************/
 
@@ -268,6 +303,7 @@ void after_task_exit () {
         finished_disp = 1;
         if(modo_scheduler == 0) {
             printf("Task 1 exit: execution time %d ms, processor time %d ms, %d activations\n", end_time_dispatcher - start_time_dispatcher , processor_time_disp, activations_disp);
+            printf("\n a quantidade de blocos percorridos foi: %d", blocos_percorridos);
         }
     }
 }
