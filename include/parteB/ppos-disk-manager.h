@@ -7,6 +7,18 @@
 #ifndef __DISK_MGR__
 #define __DISK_MGR__
 
+#include "disk-driver.h"
+#include "ppos-data.h"
+#include "ppos-core-globals.h"
+#include "ppos.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <signal.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/signal.h>
+#include <errno.h>
+
 //#define DEBUG_DISK 1
 
 // estruturas de dados e rotinas de inicializacao e acesso
@@ -40,7 +52,9 @@ typedef struct {
     diskrequest_t* requestQueue;
 } disk_t;
 
-extern disk_t* disco;
+extern disk_t disco;
+extern task_t taskDiskMgr;
+extern int finalizadas;
 
 // inicializacao do gerente de disco
 // retorna -1 em erro ou 0 em sucesso

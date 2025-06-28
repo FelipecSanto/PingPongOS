@@ -30,16 +30,49 @@ contab-prio: src/parteA/pingpong-contab-prio.c $(OBJS)
 	@./contab-prio || (echo "Deu ruim"; rm -f contab-prio)
 	@rm -f contab-prio
 
-disc1: src/parteB/pingpong-disco1.c $(OBJS)
+d1-fcfs: src/parteB/pingpong-disco1.c $(OBJS)
 	@cp disk_original.dat disk.dat
-	@$(CC) -o disc1 src/parteB/pingpong-disco1.c $(OBJS) $(CFLAGS) -lrt
+	@$(CC) -DFCFS=1 -o disc1 src/parteB/pingpong-disco1.c $(OBJS) $(CFLAGS) -lrt
 	@./disc1 > saida_terminal_disk1.txt || (echo "Deu ruim"; rm -f disc1)
 	@rm -f disc1
 	@cp disk_original.dat disk.dat
 
-disc2: src/parteB/pingpong-disco2.c $(OBJS)
+d1-sstf: src/parteB/pingpong-disco1.c $(OBJS)
 	@cp disk_original.dat disk.dat
-	@$(CC) -o disc2 src/parteB/pingpong-disco2.c $(OBJS) $(CFLAGS) -lrt
+	@$(CC) -DSSTF=1 -o disc1 src/parteB/pingpong-disco1.c $(OBJS) $(CFLAGS) -lrt
+	@./disc1 > saida_terminal_disk1.txt || (echo "Deu ruim"; rm -f disc1)
+	@rm -f disc1
+	@cp disk_original.dat disk.dat
+
+d1-cscan: src/parteB/pingpong-disco1.c $(OBJS)
+	@cp disk_original.dat disk.dat
+	@$(CC) -DCSCAN=1 -o disc1 src/parteB/pingpong-disco1.c $(OBJS) $(CFLAGS) -lrt
+	@./disc1 > saida_terminal_disk1.txt || (echo "Deu ruim"; rm -f disc1)
+	@rm -f disc1
+	@cp disk_original.dat disk.dat
+
+d2-fcfs: src/parteB/pingpong-disco2.c $(OBJS)
+	@cp disk_original.dat disk.dat
+	@$(CC) -DFCFS=1 -o disc2 src/parteB/pingpong-disco2.c $(OBJS) $(CFLAGS) -lrt
+	@./disc2 > saida_terminal_disk2.txt || (echo "Deu ruim"; rm -f disc2)
+	@rm -f disc2
+	@cp disk_original.dat disk.dat
+
+debug-d2-fcfs: src/parteB/pingpong-disco2.c $(OBJS)
+	@cp disk_original.dat disk.dat
+	@$(CC) -DFCFS=1 -g -o disc2 src/parteB/pingpong-disco2.c $(OBJS) $(CFLAGS) -lrt
+	@gdb ./disc2
+
+d2-sstf: src/parteB/pingpong-disco2.c $(OBJS)
+	@cp disk_original.dat disk.dat
+	@$(CC) -DSSTF=1 -o disc2 src/parteB/pingpong-disco2.c $(OBJS) $(CFLAGS) -lrt
+	@./disc2 > saida_terminal_disk2.txt || (echo "Deu ruim"; rm -f disc2)
+	@rm -f disc2
+	@cp disk_original.dat disk.dat
+
+d2-cscan: src/parteB/pingpong-disco2.c $(OBJS)
+	@cp disk_original.dat disk.dat
+	@$(CC) -DCSCAN=1 -o disc2 src/parteB/pingpong-disco2.c $(OBJS) $(CFLAGS) -lrt
 	@./disc2 > saida_terminal_disk2.txt || (echo "Deu ruim"; rm -f disc2)
 	@rm -f disc2
 	@cp disk_original.dat disk.dat

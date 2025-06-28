@@ -29,6 +29,8 @@ int start_time_dispatcher = 0, end_time_dispatcher = 0, activations_disp = 0, pr
 // Variáveis globais para os dados da main
 int start_time_main = 0, end_time_main = 0, activations_main = 0, processor_time_main = 0, start_processor_main = 0, finished_main = 0;
 
+int termina = 1;
+
 // Variavel para saber se está usando o pingpong-scheduler.c
 #ifdef SCHEDULER_MODE
     int modo_scheduler = SCHEDULER_MODE;
@@ -91,13 +93,23 @@ task_t * scheduler() {
 
 /*************************************************PARTE B*****************************************************************************/
 
-#define FCFS   0
-#define SSTF   1 //tem que por isso dps la no makefile, nao sei fazer isso
-#define CSCAN  2
+// Definições de políticas de disco como flags de compilação
 
-int politica_disco = 0;  //so para f
+#define MODO_FCFS   0
+#define MODO_SSTF   1
+#define MODO_CSCAN  2
 
-int cabeca_do_disco = 0;
+#ifdef FCFS
+    int politica_disco = 0;
+#elif defined(SSTF)
+    int politica_disco = 1;
+#elif defined(CSCAN)
+    int politica_disco = 2;
+#else
+    int politica_disco = 0; // padrão FCFS se nenhuma flag for definida
+#endif
+
+int cabeca_do_disco = 1;
 
 int blocos_percorridos = 0;
 
@@ -109,10 +121,10 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
 
     diskrequest_t* retorno = NULL;
 
-    if (politica_disco == FCFS) {
+    if (politica_disco == MODO_FCFS) {
         retorno = request;
     }
-    else if (politica_disco == SSTF) {
+    else if (politica_disco == MODO_SSTF) {
         int menor_dist = 99999999;
         for (diskrequest_t* r = request->next; r != request || retorno == NULL; r = r->next) {
             dist = abs(r->block - request->block);
@@ -283,7 +295,8 @@ void after_task_exit () {
         
         // Imprime as contabilizações de cada tarefa (separado do dispatcher porque seus campos da TCB tem comportamento anômalo)
         if(modo_scheduler == 0) {
-            printf("Task %d exit: execution time %d ms, processor time %d ms, %d activations\n", taskExec->id, taskExec->end_time - taskExec->start_time, taskExec->processor_time, taskExec->activations);
+            if(modo_parte_a == 0 && taskExec->id != 2)
+                printf("Task %d exit: execution time %d ms, processor time %d ms, %d activations\n", taskExec->id, taskExec->end_time - taskExec->start_time, taskExec->processor_time, taskExec->activations);
         }
     }
 
@@ -303,7 +316,7 @@ void after_task_exit () {
         finished_disp = 1;
         if(modo_scheduler == 0) {
             printf("Task 1 exit: execution time %d ms, processor time %d ms, %d activations\n", end_time_dispatcher - start_time_dispatcher , processor_time_disp, activations_disp);
-            printf("\n a quantidade de blocos percorridos foi: %d", blocos_percorridos);
+            printf("\nA quantidade de blocos percorridos foi: %d", blocos_percorridos);
         }
     }
 }
@@ -314,6 +327,10 @@ void after_task_exit () {
 
 void before_task_switch ( task_t *task ) {
     // put your customization here
+    if(task == NULL) {
+        printf("\nErro: task_switch recebeu uma tarefa nula.\n");
+        exit(1);
+    }
 #ifdef DEBUG
     printf("\ntask_switch - BEFORE - [%d -> %d]", taskExec->id, task->id);
 #endif
@@ -330,11 +347,13 @@ void before_task_switch ( task_t *task ) {
     } 
     // Se a tarefa que está parando de executar for o dispatcher, 
     else if(taskExec->id == 1 && finished_disp == 0) {
-        processor_time_disp += ((int)systime() - start_processor_disp);
+        // printf("Dispatcher: readyQueue size = %d\n", queue_size((queue_t *)readyQueue));
+        // if(task->id == 0) {
+            processor_time_disp += ((int)systime() - start_processor_disp);
+        // }
     }
-
 /*****************************************TAREFA ATUAL QUE ESTÁ SAINDO********************************************************************/
-
+// [<--bloco 0000
 
 /*************************************TAREFA QUE ESTÁ COMEÇANDO A EXECUTAR****************************************************************/
 
@@ -350,9 +369,10 @@ void before_task_switch ( task_t *task ) {
     }
     // Se a tarefa que está começando a executar for o dispatcher, guarda o tempo de início dela no processador e incrementa o número de ativações dela
     else if(task->id == 1 && finished_disp == 0) {
-        // printf("\nDispatcher ativado\n");
-        start_processor_disp = (int)systime();
-        activations_disp++;
+        // if(taskExec->id == 0) {
+            start_processor_disp = (int)systime();
+            activations_disp++;
+        // }
     }
 
 /*************************************TAREFA QUE ESTÁ COMEÇANDO A EXECUTAR****************************************************************/
@@ -366,6 +386,12 @@ void after_task_switch ( task_t *task ) {
     if(modo_parte_a) {
         // Se a tarefa atual for o dispatcher e tiver só o dispatcher e a main na fila de prontas finaliza o dispatcher
         if(countTasks <= 1 && finalizadas > 0 && taskExec->id == 1) {
+            task_exit(0);
+        }
+    } else {
+        if(countTasks <= 2 && taskExec->id == 1 && finalizadas > 0 && termina) {
+            termina = 0;
+            taskExec = &taskDiskMgr;
             task_exit(0);
         }
     }
