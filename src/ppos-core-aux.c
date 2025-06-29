@@ -129,7 +129,7 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
     else if (politica_disco == MODO_SSTF) {
         int menor_dist = 99999999;
         // printf("\nSSTF com head em %d", anterior);
-        for (diskrequest_t* r = request->next; r != request || retorno == NULL; r = r->next) {
+        for (diskrequest_t* r = request; r != request || retorno == NULL; r = r->next) {
             dist = abs(r->block - anterior);
             if (dist < menor_dist) {
                 menor_dist = dist;
