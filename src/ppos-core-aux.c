@@ -162,7 +162,7 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
 
         if (!encontrou) {
             // printf("\n volta ao comeco :head de %d volta pra 0", head); //avisa que chegou ate o final do disco e vai voltar a contar do 0
-            blocos_percorridos += 255 - head; 
+            blocos_percorridos += 255 + (255 - head);
             menor_dist = 99999999;
 
             r = request;
