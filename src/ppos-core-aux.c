@@ -113,9 +113,11 @@ int cabeca_do_disco = 1;
 
 int blocos_percorridos = 0;
 
+int anterior = 0;
 
 diskrequest_t* disk_scheduler(diskrequest_t* request) {
     int dist;
+    politica_disco = 2;
     if (!request)
         return NULL;
 
@@ -126,6 +128,7 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
     }
     else if (politica_disco == MODO_SSTF) {
         int menor_dist = 99999999;
+        printf("\nSSTF");
         for (diskrequest_t* r = request->next; r != request || retorno == NULL; r = r->next) {
             dist = abs(r->block - request->block);
             if (dist < menor_dist) {
@@ -135,12 +138,47 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
                 
             }
             printf("\n%d dist atual\n", dist);
-        }
-        
-        
+        }  
     }
-    dist = abs(retorno->block - request->block);
+    else if (politica_disco == MODO_CSCAN) {
+        printf("\nCSCAN");
+
+        diskrequest_t* escolhido = NULL;
+        int menor_dist = 99999999;
+        int encontrou = 0;
+
+        diskrequest_t* r = request;
+        int head = anterior;
+        do {
+            if (r->block >= head && (r->block - head) < menor_dist) {
+                menor_dist = r->block - head;
+                escolhido = r;
+                encontrou = 1;
+            }
+            r = r->next;
+        } while (r != request);
+
+        if (!encontrou) {
+            printf("\n volta ao comeco :head de %d volta pra 0", head);
+            blocos_percorridos += 255 - head; 
+            menor_dist = 99999999;
+
+            r = request;
+            do {
+                if (r->block < menor_dist) {
+                    menor_dist = r->block;
+                    escolhido = r;
+                }
+                r = r->next;
+            } while (r != request);
+        }
+
+        retorno = escolhido;
+    }
+    printf("\nbloco retornado %d", retorno->block);
+    dist = abs(retorno->block - anterior);
     printf("\n%d foi a distancia percorrida entre o request e o bloco retornado\n", dist);
+    anterior = retorno->block;
     blocos_percorridos += dist;
 
     return retorno;
