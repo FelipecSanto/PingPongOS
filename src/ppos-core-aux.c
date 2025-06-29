@@ -174,6 +174,9 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
                 r = r->next;
                 // printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
             } while (r != request);
+        anterior = 0;
+        printf("\n%d foi a distancia percorrida para sair do head, ir ate 255 depois ate o 0 e ate o bloco retornado\n", 255 + (255 - head) + abs(escolhido->block - anterior));
+        
         }
 
         retorno = escolhido;
