@@ -100,13 +100,13 @@ task_t * scheduler() {
 #define MODO_CSCAN  2
 
 #ifdef FCFS
-    int politica_disco = 0;
+int politica_disco = MODO_FCFS;
 #elif defined(SSTF)
-    int politica_disco = 1;
+int politica_disco = MODO_SSTF;
 #elif defined(CSCAN)
-    int politica_disco = 2;
+int politica_disco = MODO_CSCAN;
 #else
-    int politica_disco = 0; // padrão FCFS se nenhuma flag for definida
+int politica_disco = MODO_FCFS; // padrão FCFS se nenhuma flag for definida
 #endif
 
 int cabeca_do_disco = 1;
@@ -117,28 +117,27 @@ int anterior = 0;
 
 diskrequest_t* disk_scheduler(diskrequest_t* request) {
     int dist;
-    politica_disco = 2;
     if (!request)
         return NULL;
 
     diskrequest_t* retorno = NULL;
 
     if (politica_disco == MODO_FCFS) {
-        printf("\nFCFS");
+        // printf("\nFCFS");
         retorno = request;
     }
     else if (politica_disco == MODO_SSTF) {
         int menor_dist = 99999999;
-        printf("\nSSTF com head em %d", anterior);
+        // printf("\nSSTF com head em %d", anterior);
         for (diskrequest_t* r = request->next; r != request || retorno == NULL; r = r->next) {
             dist = abs(r->block - anterior);
             if (dist < menor_dist) {
                 menor_dist = dist;
                 retorno = r;
-                printf("\n%d block minimo\n", r->block); //printa o bloco mais proximo do head, caso ele seja o menor encontrado ate aquele momento
+                // printf("\n%d block minimo\n", r->block); //printa o bloco mais proximo do head, caso ele seja o menor encontrado ate aquele momento
                 
             }
-            printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
+            // printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
         }  
     }
     else if (politica_disco == MODO_CSCAN) {
@@ -150,7 +149,7 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
 
         diskrequest_t* r = request;
         int head = anterior;
-        printf("\nCSCAN, com head em %d", head);
+        // printf("\nCSCAN, com head em %d", head);
         do {
             if (r->block >= head && (r->block - head) < menor_dist) {
                 menor_dist = r->block - head;
@@ -158,11 +157,11 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
                 encontrou = 1;
             }
             r = r->next;
-            printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
+            // printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
         } while (r != request);
 
         if (!encontrou) {
-            printf("\n volta ao comeco :head de %d volta pra 0", head); //avisa que chegou ate o final do disco e vai voltar a contar do 0
+            // printf("\n volta ao comeco :head de %d volta pra 0", head); //avisa que chegou ate o final do disco e vai voltar a contar do 0
             blocos_percorridos += 255 - head; 
             menor_dist = 99999999;
 
@@ -173,15 +172,15 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
                     escolhido = r;
                 }
                 r = r->next;
-                printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
+                // printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
             } while (r != request);
         }
 
         retorno = escolhido;
     }
-    printf("\nbloco retornado %d", retorno->block); //avisa qual o bloco retornado, para ver se faz sentido com o head e a politioc
+    // printf("\nbloco retornado %d", retorno->block); //avisa qual o bloco retornado, para ver se faz sentido com o head e a politioc
     dist = abs(retorno->block - anterior);
-    printf("\n%d foi a distancia percorrida entre o request e o bloco retornado\n", dist); //serve para ver se faz sentido a distancia percorrida em cada iteracao
+    // printf("\n%d foi a distancia percorrida entre o request e o bloco retornado\n", dist); //serve para ver se faz sentido a distancia percorrida em cada iteracao
     anterior = retorno->block;
     blocos_percorridos += dist;
 

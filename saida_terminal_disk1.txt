@@ -1,2055 +1,1031 @@
     0 ms: main inicio
     0 ms: disco contem 256 blocos de 64 bytes cada
     0 ms: lendo bloco 0
-
-0 foi a distancia percorrida entre o request e o bloco retornado
    38 ms: buffer: [<--bloco 0000------------------------------------------------->
 ]
-   38 ms: lendo bloco 1
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-   70 ms: buffer: [<--bloco 0001------------------------------------------------->
+   39 ms: lendo bloco 1
+   71 ms: buffer: [<--bloco 0001------------------------------------------------->
 ]
-   70 ms: lendo bloco 2
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  121 ms: buffer: [<--bloco 0002------------------------------------------------->
+   71 ms: lendo bloco 2
+  122 ms: buffer: [<--bloco 0002------------------------------------------------->
 ]
   122 ms: lendo bloco 3
-
-0 foi a distancia percorrida entre o request e o bloco retornado
   155 ms: buffer: [<--bloco 0003------------------------------------------------->
 ]
-  155 ms: lendo bloco 4
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  206 ms: buffer: [<--bloco 0004------------------------------------------------->
+  156 ms: lendo bloco 4
+  207 ms: buffer: [<--bloco 0004------------------------------------------------->
 ]
   207 ms: lendo bloco 5
-
-0 foi a distancia percorrida entre o request e o bloco retornado
   240 ms: buffer: [<--bloco 0005------------------------------------------------->
 ]
-  240 ms: lendo bloco 6
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  275 ms: buffer: [<--bloco 0006------------------------------------------------->
+  241 ms: lendo bloco 6
+  276 ms: buffer: [<--bloco 0006------------------------------------------------->
 ]
   276 ms: lendo bloco 7
-
-0 foi a distancia percorrida entre o request e o bloco retornado
   308 ms: buffer: [<--bloco 0007------------------------------------------------->
 ]
   308 ms: lendo bloco 8
-
-0 foi a distancia percorrida entre o request e o bloco retornado
   363 ms: buffer: [<--bloco 0008------------------------------------------------->
 ]
   364 ms: lendo bloco 9
-
-0 foi a distancia percorrida entre o request e o bloco retornado
   404 ms: buffer: [<--bloco 0009------------------------------------------------->
 ]
-  405 ms: lendo bloco 10
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  457 ms: buffer: [<--bloco 0010------------------------------------------------->
+  404 ms: lendo bloco 10
+  456 ms: buffer: [<--bloco 0010------------------------------------------------->
 ]
-  458 ms: lendo bloco 11
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  511 ms: buffer: [<--bloco 0011------------------------------------------------->
+  457 ms: lendo bloco 11
+  512 ms: buffer: [<--bloco 0011------------------------------------------------->
 ]
   512 ms: lendo bloco 12
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  556 ms: buffer: [<--bloco 0012------------------------------------------------->
+  557 ms: buffer: [<--bloco 0012------------------------------------------------->
 ]
   557 ms: lendo bloco 13
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  601 ms: buffer: [<--bloco 0013------------------------------------------------->
+  605 ms: buffer: [<--bloco 0013------------------------------------------------->
 ]
-  602 ms: lendo bloco 14
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  643 ms: buffer: [<--bloco 0014------------------------------------------------->
+  605 ms: lendo bloco 14
+  647 ms: buffer: [<--bloco 0014------------------------------------------------->
 ]
-  644 ms: lendo bloco 15
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  688 ms: buffer: [<--bloco 0015------------------------------------------------->
+  647 ms: lendo bloco 15
+  694 ms: buffer: [<--bloco 0015------------------------------------------------->
 ]
-  689 ms: lendo bloco 16
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  726 ms: buffer: [<--bloco 0016------------------------------------------------->
+  694 ms: lendo bloco 16
+  731 ms: buffer: [<--bloco 0016------------------------------------------------->
 ]
-  727 ms: lendo bloco 17
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  779 ms: buffer: [<--bloco 0017------------------------------------------------->
+  732 ms: lendo bloco 17
+  784 ms: buffer: [<--bloco 0017------------------------------------------------->
 ]
-  779 ms: lendo bloco 18
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  815 ms: buffer: [<--bloco 0018------------------------------------------------->
+  784 ms: lendo bloco 18
+  820 ms: buffer: [<--bloco 0018------------------------------------------------->
 ]
-  816 ms: lendo bloco 19
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  869 ms: buffer: [<--bloco 0019------------------------------------------------->
+  821 ms: lendo bloco 19
+  874 ms: buffer: [<--bloco 0019------------------------------------------------->
 ]
-  870 ms: lendo bloco 20
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  926 ms: buffer: [<--bloco 0020------------------------------------------------->
+  874 ms: lendo bloco 20
+  930 ms: buffer: [<--bloco 0020------------------------------------------------->
 ]
-  926 ms: lendo bloco 21
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-  975 ms: buffer: [<--bloco 0021------------------------------------------------->
+  930 ms: lendo bloco 21
+  979 ms: buffer: [<--bloco 0021------------------------------------------------->
 ]
-  976 ms: lendo bloco 22
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1033 ms: buffer: [<--bloco 0022------------------------------------------------->
+  980 ms: lendo bloco 22
+ 1037 ms: buffer: [<--bloco 0022------------------------------------------------->
 ]
- 1033 ms: lendo bloco 23
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1088 ms: buffer: [<--bloco 0023------------------------------------------------->
+ 1037 ms: lendo bloco 23
+ 1092 ms: buffer: [<--bloco 0023------------------------------------------------->
 ]
- 1089 ms: lendo bloco 24
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1135 ms: buffer: [<--bloco 0024------------------------------------------------->
+ 1092 ms: lendo bloco 24
+ 1138 ms: buffer: [<--bloco 0024------------------------------------------------->
 ]
- 1135 ms: lendo bloco 25
-
-0 foi a distancia percorrida entre o request e o bloco retornado
+ 1139 ms: lendo bloco 25
  1183 ms: buffer: [<--bloco 0025------------------------------------------------->
 ]
- 1184 ms: lendo bloco 26
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1239 ms: buffer: [<--bloco 0026------------------------------------------------->
+ 1185 ms: lendo bloco 26
+ 1240 ms: buffer: [<--bloco 0026------------------------------------------------->
 ]
- 1239 ms: lendo bloco 27
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1280 ms: buffer: [<--bloco 0027------------------------------------------------->
+ 1241 ms: lendo bloco 27
+ 1282 ms: buffer: [<--bloco 0027------------------------------------------------->
 ]
- 1281 ms: lendo bloco 28
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1315 ms: buffer: [<--bloco 0028------------------------------------------------->
+ 1284 ms: lendo bloco 28
+ 1318 ms: buffer: [<--bloco 0028------------------------------------------------->
 ]
- 1316 ms: lendo bloco 29
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1361 ms: buffer: [<--bloco 0029------------------------------------------------->
+ 1320 ms: lendo bloco 29
+ 1364 ms: buffer: [<--bloco 0029------------------------------------------------->
 ]
- 1362 ms: lendo bloco 30
-
-0 foi a distancia percorrida entre o request e o bloco retornado
+ 1364 ms: lendo bloco 30
  1398 ms: buffer: [<--bloco 0030------------------------------------------------->
 ]
- 1398 ms: lendo bloco 31
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1436 ms: buffer: [<--bloco 0031------------------------------------------------->
+ 1399 ms: lendo bloco 31
+ 1437 ms: buffer: [<--bloco 0031------------------------------------------------->
 ]
  1437 ms: lendo bloco 32
-
-0 foi a distancia percorrida entre o request e o bloco retornado
  1484 ms: buffer: [<--bloco 0032------------------------------------------------->
 ]
- 1484 ms: lendo bloco 33
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1537 ms: buffer: [<--bloco 0033------------------------------------------------->
+ 1485 ms: lendo bloco 33
+ 1538 ms: buffer: [<--bloco 0033------------------------------------------------->
 ]
  1538 ms: lendo bloco 34
-
-0 foi a distancia percorrida entre o request e o bloco retornado
  1574 ms: buffer: [<--bloco 0034------------------------------------------------->
 ]
- 1574 ms: lendo bloco 35
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1610 ms: buffer: [<--bloco 0035------------------------------------------------->
+ 1575 ms: lendo bloco 35
+ 1611 ms: buffer: [<--bloco 0035------------------------------------------------->
 ]
  1611 ms: lendo bloco 36
-
-0 foi a distancia percorrida entre o request e o bloco retornado
  1667 ms: buffer: [<--bloco 0036------------------------------------------------->
 ]
- 1667 ms: lendo bloco 37
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1708 ms: buffer: [<--bloco 0037------------------------------------------------->
+ 1668 ms: lendo bloco 37
+ 1709 ms: buffer: [<--bloco 0037------------------------------------------------->
 ]
  1709 ms: lendo bloco 38
-
-0 foi a distancia percorrida entre o request e o bloco retornado
  1743 ms: buffer: [<--bloco 0038------------------------------------------------->
 ]
- 1744 ms: lendo bloco 39
-
-0 foi a distancia percorrida entre o request e o bloco retornado
+ 1743 ms: lendo bloco 39
  1798 ms: buffer: [<--bloco 0039------------------------------------------------->
 ]
  1798 ms: lendo bloco 40
-
-0 foi a distancia percorrida entre o request e o bloco retornado
  1844 ms: buffer: [<--bloco 0040------------------------------------------------->
 ]
- 1845 ms: lendo bloco 41
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1900 ms: buffer: [<--bloco 0041------------------------------------------------->
+ 1844 ms: lendo bloco 41
+ 1899 ms: buffer: [<--bloco 0041------------------------------------------------->
 ]
  1900 ms: lendo bloco 42
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1949 ms: buffer: [<--bloco 0042------------------------------------------------->
+ 1948 ms: buffer: [<--bloco 0042------------------------------------------------->
 ]
- 1949 ms: lendo bloco 43
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 1982 ms: buffer: [<--bloco 0043------------------------------------------------->
+ 1948 ms: lendo bloco 43
+ 1981 ms: buffer: [<--bloco 0043------------------------------------------------->
 ]
- 1983 ms: lendo bloco 44
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2024 ms: buffer: [<--bloco 0044------------------------------------------------->
+ 1982 ms: lendo bloco 44
+ 2023 ms: buffer: [<--bloco 0044------------------------------------------------->
 ]
- 2024 ms: lendo bloco 45
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2079 ms: buffer: [<--bloco 0045------------------------------------------------->
+ 2023 ms: lendo bloco 45
+ 2078 ms: buffer: [<--bloco 0045------------------------------------------------->
 ]
- 2080 ms: lendo bloco 46
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2126 ms: buffer: [<--bloco 0046------------------------------------------------->
+ 2079 ms: lendo bloco 46
+ 2125 ms: buffer: [<--bloco 0046------------------------------------------------->
 ]
- 2127 ms: lendo bloco 47
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2174 ms: buffer: [<--bloco 0047------------------------------------------------->
+ 2125 ms: lendo bloco 47
+ 2172 ms: buffer: [<--bloco 0047------------------------------------------------->
 ]
- 2174 ms: lendo bloco 48
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2220 ms: buffer: [<--bloco 0048------------------------------------------------->
+ 2172 ms: lendo bloco 48
+ 2218 ms: buffer: [<--bloco 0048------------------------------------------------->
 ]
- 2221 ms: lendo bloco 49
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2273 ms: buffer: [<--bloco 0049------------------------------------------------->
+ 2219 ms: lendo bloco 49
+ 2271 ms: buffer: [<--bloco 0049------------------------------------------------->
 ]
- 2273 ms: lendo bloco 50
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2312 ms: buffer: [<--bloco 0050------------------------------------------------->
+ 2271 ms: lendo bloco 50
+ 2310 ms: buffer: [<--bloco 0050------------------------------------------------->
 ]
- 2312 ms: lendo bloco 51
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2356 ms: buffer: [<--bloco 0051------------------------------------------------->
+ 2310 ms: lendo bloco 51
+ 2354 ms: buffer: [<--bloco 0051------------------------------------------------->
 ]
- 2357 ms: lendo bloco 52
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2397 ms: buffer: [<--bloco 0052------------------------------------------------->
+ 2355 ms: lendo bloco 52
+ 2395 ms: buffer: [<--bloco 0052------------------------------------------------->
 ]
- 2397 ms: lendo bloco 53
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2436 ms: buffer: [<--bloco 0053------------------------------------------------->
+ 2395 ms: lendo bloco 53
+ 2434 ms: buffer: [<--bloco 0053------------------------------------------------->
 ]
- 2437 ms: lendo bloco 54
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2479 ms: buffer: [<--bloco 0054------------------------------------------------->
+ 2434 ms: lendo bloco 54
+ 2476 ms: buffer: [<--bloco 0054------------------------------------------------->
 ]
- 2479 ms: lendo bloco 55
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2534 ms: buffer: [<--bloco 0055------------------------------------------------->
+ 2477 ms: lendo bloco 55
+ 2532 ms: buffer: [<--bloco 0055------------------------------------------------->
 ]
- 2535 ms: lendo bloco 56
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2587 ms: buffer: [<--bloco 0056------------------------------------------------->
+ 2532 ms: lendo bloco 56
+ 2584 ms: buffer: [<--bloco 0056------------------------------------------------->
 ]
- 2587 ms: lendo bloco 57
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2623 ms: buffer: [<--bloco 0057------------------------------------------------->
+ 2585 ms: lendo bloco 57
+ 2621 ms: buffer: [<--bloco 0057------------------------------------------------->
 ]
- 2623 ms: lendo bloco 58
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2661 ms: buffer: [<--bloco 0058------------------------------------------------->
+ 2621 ms: lendo bloco 58
+ 2659 ms: buffer: [<--bloco 0058------------------------------------------------->
 ]
- 2662 ms: lendo bloco 59
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2714 ms: buffer: [<--bloco 0059------------------------------------------------->
+ 2659 ms: lendo bloco 59
+ 2711 ms: buffer: [<--bloco 0059------------------------------------------------->
 ]
- 2714 ms: lendo bloco 60
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2764 ms: buffer: [<--bloco 0060------------------------------------------------->
+ 2712 ms: lendo bloco 60
+ 2762 ms: buffer: [<--bloco 0060------------------------------------------------->
 ]
- 2765 ms: lendo bloco 61
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2809 ms: buffer: [<--bloco 0061------------------------------------------------->
+ 2762 ms: lendo bloco 61
+ 2806 ms: buffer: [<--bloco 0061------------------------------------------------->
 ]
- 2809 ms: lendo bloco 62
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2841 ms: buffer: [<--bloco 0062------------------------------------------------->
+ 2807 ms: lendo bloco 62
+ 2839 ms: buffer: [<--bloco 0062------------------------------------------------->
 ]
- 2842 ms: lendo bloco 63
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2881 ms: buffer: [<--bloco 0063------------------------------------------------->
+ 2839 ms: lendo bloco 63
+ 2878 ms: buffer: [<--bloco 0063------------------------------------------------->
 ]
- 2881 ms: lendo bloco 64
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2917 ms: buffer: [<--bloco 0064------------------------------------------------->
+ 2878 ms: lendo bloco 64
+ 2914 ms: buffer: [<--bloco 0064------------------------------------------------->
 ]
- 2918 ms: lendo bloco 65
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2952 ms: buffer: [<--bloco 0065------------------------------------------------->
+ 2915 ms: lendo bloco 65
+ 2949 ms: buffer: [<--bloco 0065------------------------------------------------->
 ]
- 2952 ms: lendo bloco 66
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 2993 ms: buffer: [<--bloco 0066------------------------------------------------->
+ 2949 ms: lendo bloco 66
+ 2990 ms: buffer: [<--bloco 0066------------------------------------------------->
 ]
- 2993 ms: lendo bloco 67
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3028 ms: buffer: [<--bloco 0067------------------------------------------------->
+ 2990 ms: lendo bloco 67
+ 3024 ms: buffer: [<--bloco 0067------------------------------------------------->
 ]
- 3028 ms: lendo bloco 68
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3069 ms: buffer: [<--bloco 0068------------------------------------------------->
+ 3025 ms: lendo bloco 68
+ 3066 ms: buffer: [<--bloco 0068------------------------------------------------->
 ]
- 3070 ms: lendo bloco 69
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3114 ms: buffer: [<--bloco 0069------------------------------------------------->
+ 3066 ms: lendo bloco 69
+ 3110 ms: buffer: [<--bloco 0069------------------------------------------------->
 ]
- 3114 ms: lendo bloco 70
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3168 ms: buffer: [<--bloco 0070------------------------------------------------->
+ 3110 ms: lendo bloco 70
+ 3164 ms: buffer: [<--bloco 0070------------------------------------------------->
 ]
- 3169 ms: lendo bloco 71
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3222 ms: buffer: [<--bloco 0071------------------------------------------------->
+ 3165 ms: lendo bloco 71
+ 3218 ms: buffer: [<--bloco 0071------------------------------------------------->
 ]
- 3222 ms: lendo bloco 72
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3260 ms: buffer: [<--bloco 0072------------------------------------------------->
+ 3218 ms: lendo bloco 72
+ 3256 ms: buffer: [<--bloco 0072------------------------------------------------->
 ]
- 3261 ms: lendo bloco 73
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3305 ms: buffer: [<--bloco 0073------------------------------------------------->
+ 3256 ms: lendo bloco 73
+ 3300 ms: buffer: [<--bloco 0073------------------------------------------------->
 ]
- 3305 ms: lendo bloco 74
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3361 ms: buffer: [<--bloco 0074------------------------------------------------->
+ 3301 ms: lendo bloco 74
+ 3357 ms: buffer: [<--bloco 0074------------------------------------------------->
 ]
- 3361 ms: lendo bloco 75
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3409 ms: buffer: [<--bloco 0075------------------------------------------------->
+ 3357 ms: lendo bloco 75
+ 3405 ms: buffer: [<--bloco 0075------------------------------------------------->
 ]
- 3410 ms: lendo bloco 76
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3448 ms: buffer: [<--bloco 0076------------------------------------------------->
+ 3406 ms: lendo bloco 76
+ 3444 ms: buffer: [<--bloco 0076------------------------------------------------->
 ]
- 3448 ms: lendo bloco 77
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3489 ms: buffer: [<--bloco 0077------------------------------------------------->
+ 3444 ms: lendo bloco 77
+ 3485 ms: buffer: [<--bloco 0077------------------------------------------------->
 ]
- 3490 ms: lendo bloco 78
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3524 ms: buffer: [<--bloco 0078------------------------------------------------->
+ 3486 ms: lendo bloco 78
+ 3520 ms: buffer: [<--bloco 0078------------------------------------------------->
 ]
- 3524 ms: lendo bloco 79
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3578 ms: buffer: [<--bloco 0079------------------------------------------------->
+ 3520 ms: lendo bloco 79
+ 3574 ms: buffer: [<--bloco 0079------------------------------------------------->
 ]
- 3579 ms: lendo bloco 80
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3610 ms: buffer: [<--bloco 0080------------------------------------------------->
+ 3574 ms: lendo bloco 80
+ 3606 ms: buffer: [<--bloco 0080------------------------------------------------->
 ]
- 3610 ms: lendo bloco 81
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3648 ms: buffer: [<--bloco 0081------------------------------------------------->
+ 3606 ms: lendo bloco 81
+ 3644 ms: buffer: [<--bloco 0081------------------------------------------------->
 ]
- 3649 ms: lendo bloco 82
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3689 ms: buffer: [<--bloco 0082------------------------------------------------->
+ 3644 ms: lendo bloco 82
+ 3684 ms: buffer: [<--bloco 0082------------------------------------------------->
 ]
- 3689 ms: lendo bloco 83
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3729 ms: buffer: [<--bloco 0083------------------------------------------------->
+ 3685 ms: lendo bloco 83
+ 3725 ms: buffer: [<--bloco 0083------------------------------------------------->
 ]
- 3730 ms: lendo bloco 84
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3776 ms: buffer: [<--bloco 0084------------------------------------------------->
+ 3725 ms: lendo bloco 84
+ 3771 ms: buffer: [<--bloco 0084------------------------------------------------->
 ]
- 3776 ms: lendo bloco 85
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3825 ms: buffer: [<--bloco 0085------------------------------------------------->
+ 3771 ms: lendo bloco 85
+ 3820 ms: buffer: [<--bloco 0085------------------------------------------------->
 ]
- 3825 ms: lendo bloco 86
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3859 ms: buffer: [<--bloco 0086------------------------------------------------->
+ 3820 ms: lendo bloco 86
+ 3854 ms: buffer: [<--bloco 0086------------------------------------------------->
 ]
- 3860 ms: lendo bloco 87
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3901 ms: buffer: [<--bloco 0087------------------------------------------------->
+ 3854 ms: lendo bloco 87
+ 3895 ms: buffer: [<--bloco 0087------------------------------------------------->
 ]
- 3901 ms: lendo bloco 88
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3954 ms: buffer: [<--bloco 0088------------------------------------------------->
+ 3895 ms: lendo bloco 88
+ 3949 ms: buffer: [<--bloco 0088------------------------------------------------->
 ]
- 3955 ms: lendo bloco 89
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 3996 ms: buffer: [<--bloco 0089------------------------------------------------->
+ 3949 ms: lendo bloco 89
+ 3990 ms: buffer: [<--bloco 0089------------------------------------------------->
 ]
- 3997 ms: lendo bloco 90
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4032 ms: buffer: [<--bloco 0090------------------------------------------------->
+ 3990 ms: lendo bloco 90
+ 4025 ms: buffer: [<--bloco 0090------------------------------------------------->
 ]
- 4032 ms: lendo bloco 91
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4077 ms: buffer: [<--bloco 0091------------------------------------------------->
+ 4026 ms: lendo bloco 91
+ 4072 ms: buffer: [<--bloco 0091------------------------------------------------->
 ]
- 4078 ms: lendo bloco 92
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4129 ms: buffer: [<--bloco 0092------------------------------------------------->
+ 4072 ms: lendo bloco 92
+ 4123 ms: buffer: [<--bloco 0092------------------------------------------------->
 ]
- 4129 ms: lendo bloco 93
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4161 ms: buffer: [<--bloco 0093------------------------------------------------->
+ 4123 ms: lendo bloco 93
+ 4156 ms: buffer: [<--bloco 0093------------------------------------------------->
 ]
- 4162 ms: lendo bloco 94
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4212 ms: buffer: [<--bloco 0094------------------------------------------------->
+ 4156 ms: lendo bloco 94
+ 4206 ms: buffer: [<--bloco 0094------------------------------------------------->
 ]
- 4213 ms: lendo bloco 95
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4270 ms: buffer: [<--bloco 0095------------------------------------------------->
+ 4206 ms: lendo bloco 95
+ 4263 ms: buffer: [<--bloco 0095------------------------------------------------->
 ]
- 4270 ms: lendo bloco 96
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4302 ms: buffer: [<--bloco 0096------------------------------------------------->
+ 4264 ms: lendo bloco 96
+ 4296 ms: buffer: [<--bloco 0096------------------------------------------------->
 ]
- 4302 ms: lendo bloco 97
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4336 ms: buffer: [<--bloco 0097------------------------------------------------->
+ 4296 ms: lendo bloco 97
+ 4330 ms: buffer: [<--bloco 0097------------------------------------------------->
 ]
- 4337 ms: lendo bloco 98
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4394 ms: buffer: [<--bloco 0098------------------------------------------------->
+ 4330 ms: lendo bloco 98
+ 4387 ms: buffer: [<--bloco 0098------------------------------------------------->
 ]
- 4395 ms: lendo bloco 99
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4437 ms: buffer: [<--bloco 0099------------------------------------------------->
+ 4388 ms: lendo bloco 99
+ 4430 ms: buffer: [<--bloco 0099------------------------------------------------->
 ]
- 4437 ms: lendo bloco 100
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4481 ms: buffer: [<--bloco 0100------------------------------------------------->
+ 4430 ms: lendo bloco 100
+ 4474 ms: buffer: [<--bloco 0100------------------------------------------------->
 ]
- 4482 ms: lendo bloco 101
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4532 ms: buffer: [<--bloco 0101------------------------------------------------->
+ 4475 ms: lendo bloco 101
+ 4525 ms: buffer: [<--bloco 0101------------------------------------------------->
 ]
- 4532 ms: lendo bloco 102
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4570 ms: buffer: [<--bloco 0102------------------------------------------------->
+ 4525 ms: lendo bloco 102
+ 4563 ms: buffer: [<--bloco 0102------------------------------------------------->
 ]
- 4570 ms: lendo bloco 103
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4621 ms: buffer: [<--bloco 0103------------------------------------------------->
+ 4564 ms: lendo bloco 103
+ 4615 ms: buffer: [<--bloco 0103------------------------------------------------->
 ]
- 4622 ms: lendo bloco 104
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4654 ms: buffer: [<--bloco 0104------------------------------------------------->
+ 4615 ms: lendo bloco 104
+ 4646 ms: buffer: [<--bloco 0104------------------------------------------------->
 ]
- 4654 ms: lendo bloco 105
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4687 ms: buffer: [<--bloco 0105------------------------------------------------->
+ 4647 ms: lendo bloco 105
+ 4680 ms: buffer: [<--bloco 0105------------------------------------------------->
 ]
- 4688 ms: lendo bloco 106
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4726 ms: buffer: [<--bloco 0106------------------------------------------------->
+ 4680 ms: lendo bloco 106
+ 4718 ms: buffer: [<--bloco 0106------------------------------------------------->
 ]
- 4726 ms: lendo bloco 107
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4766 ms: buffer: [<--bloco 0107------------------------------------------------->
+ 4719 ms: lendo bloco 107
+ 4759 ms: buffer: [<--bloco 0107------------------------------------------------->
 ]
- 4767 ms: lendo bloco 108
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4806 ms: buffer: [<--bloco 0108------------------------------------------------->
+ 4759 ms: lendo bloco 108
+ 4798 ms: buffer: [<--bloco 0108------------------------------------------------->
 ]
- 4806 ms: lendo bloco 109
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4844 ms: buffer: [<--bloco 0109------------------------------------------------->
+ 4799 ms: lendo bloco 109
+ 4837 ms: buffer: [<--bloco 0109------------------------------------------------->
 ]
- 4845 ms: lendo bloco 110
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4881 ms: buffer: [<--bloco 0110------------------------------------------------->
+ 4837 ms: lendo bloco 110
+ 4873 ms: buffer: [<--bloco 0110------------------------------------------------->
 ]
- 4881 ms: lendo bloco 111
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4917 ms: buffer: [<--bloco 0111------------------------------------------------->
+ 4873 ms: lendo bloco 111
+ 4909 ms: buffer: [<--bloco 0111------------------------------------------------->
 ]
- 4917 ms: lendo bloco 112
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 4963 ms: buffer: [<--bloco 0112------------------------------------------------->
+ 4910 ms: lendo bloco 112
+ 4956 ms: buffer: [<--bloco 0112------------------------------------------------->
 ]
- 4964 ms: lendo bloco 113
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5006 ms: buffer: [<--bloco 0113------------------------------------------------->
+ 4957 ms: lendo bloco 113
+ 4999 ms: buffer: [<--bloco 0113------------------------------------------------->
 ]
- 5006 ms: lendo bloco 114
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5048 ms: buffer: [<--bloco 0114------------------------------------------------->
+ 4999 ms: lendo bloco 114
+ 5041 ms: buffer: [<--bloco 0114------------------------------------------------->
 ]
- 5049 ms: lendo bloco 115
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5080 ms: buffer: [<--bloco 0115------------------------------------------------->
+ 5041 ms: lendo bloco 115
+ 5072 ms: buffer: [<--bloco 0115------------------------------------------------->
 ]
- 5080 ms: lendo bloco 116
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5112 ms: buffer: [<--bloco 0116------------------------------------------------->
+ 5073 ms: lendo bloco 116
+ 5105 ms: buffer: [<--bloco 0116------------------------------------------------->
 ]
- 5113 ms: lendo bloco 117
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5158 ms: buffer: [<--bloco 0117------------------------------------------------->
+ 5105 ms: lendo bloco 117
+ 5150 ms: buffer: [<--bloco 0117------------------------------------------------->
 ]
- 5158 ms: lendo bloco 118
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5195 ms: buffer: [<--bloco 0118------------------------------------------------->
+ 5151 ms: lendo bloco 118
+ 5188 ms: buffer: [<--bloco 0118------------------------------------------------->
 ]
- 5196 ms: lendo bloco 119
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5250 ms: buffer: [<--bloco 0119------------------------------------------------->
+ 5188 ms: lendo bloco 119
+ 5242 ms: buffer: [<--bloco 0119------------------------------------------------->
 ]
- 5250 ms: lendo bloco 120
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5303 ms: buffer: [<--bloco 0120------------------------------------------------->
+ 5243 ms: lendo bloco 120
+ 5296 ms: buffer: [<--bloco 0120------------------------------------------------->
 ]
- 5304 ms: lendo bloco 121
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5341 ms: buffer: [<--bloco 0121------------------------------------------------->
+ 5296 ms: lendo bloco 121
+ 5333 ms: buffer: [<--bloco 0121------------------------------------------------->
 ]
- 5341 ms: lendo bloco 122
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5380 ms: buffer: [<--bloco 0122------------------------------------------------->
+ 5335 ms: lendo bloco 122
+ 5374 ms: buffer: [<--bloco 0122------------------------------------------------->
 ]
- 5381 ms: lendo bloco 123
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5427 ms: buffer: [<--bloco 0123------------------------------------------------->
+ 5374 ms: lendo bloco 123
+ 5420 ms: buffer: [<--bloco 0123------------------------------------------------->
 ]
- 5427 ms: lendo bloco 124
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5466 ms: buffer: [<--bloco 0124------------------------------------------------->
+ 5421 ms: lendo bloco 124
+ 5460 ms: buffer: [<--bloco 0124------------------------------------------------->
 ]
- 5467 ms: lendo bloco 125
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5499 ms: buffer: [<--bloco 0125------------------------------------------------->
+ 5460 ms: lendo bloco 125
+ 5492 ms: buffer: [<--bloco 0125------------------------------------------------->
 ]
- 5499 ms: lendo bloco 126
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5541 ms: buffer: [<--bloco 0126------------------------------------------------->
+ 5493 ms: lendo bloco 126
+ 5535 ms: buffer: [<--bloco 0126------------------------------------------------->
 ]
- 5542 ms: lendo bloco 127
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5579 ms: buffer: [<--bloco 0127------------------------------------------------->
+ 5535 ms: lendo bloco 127
+ 5572 ms: buffer: [<--bloco 0127------------------------------------------------->
 ]
- 5579 ms: lendo bloco 128
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5610 ms: buffer: [<--bloco 0128------------------------------------------------->
+ 5572 ms: lendo bloco 128
+ 5603 ms: buffer: [<--bloco 0128------------------------------------------------->
 ]
- 5611 ms: lendo bloco 129
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5648 ms: buffer: [<--bloco 0129------------------------------------------------->
+ 5604 ms: lendo bloco 129
+ 5641 ms: buffer: [<--bloco 0129------------------------------------------------->
 ]
- 5648 ms: lendo bloco 130
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5694 ms: buffer: [<--bloco 0130------------------------------------------------->
+ 5641 ms: lendo bloco 130
+ 5686 ms: buffer: [<--bloco 0130------------------------------------------------->
 ]
- 5694 ms: lendo bloco 131
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5735 ms: buffer: [<--bloco 0131------------------------------------------------->
+ 5687 ms: lendo bloco 131
+ 5728 ms: buffer: [<--bloco 0131------------------------------------------------->
 ]
- 5736 ms: lendo bloco 132
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5792 ms: buffer: [<--bloco 0132------------------------------------------------->
+ 5728 ms: lendo bloco 132
+ 5784 ms: buffer: [<--bloco 0132------------------------------------------------->
 ]
- 5792 ms: lendo bloco 133
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5841 ms: buffer: [<--bloco 0133------------------------------------------------->
+ 5785 ms: lendo bloco 133
+ 5834 ms: buffer: [<--bloco 0133------------------------------------------------->
 ]
- 5842 ms: lendo bloco 134
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5873 ms: buffer: [<--bloco 0134------------------------------------------------->
+ 5834 ms: lendo bloco 134
+ 5865 ms: buffer: [<--bloco 0134------------------------------------------------->
 ]
- 5873 ms: lendo bloco 135
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5904 ms: buffer: [<--bloco 0135------------------------------------------------->
+ 5865 ms: lendo bloco 135
+ 5897 ms: buffer: [<--bloco 0135------------------------------------------------->
 ]
- 5905 ms: lendo bloco 136
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5952 ms: buffer: [<--bloco 0136------------------------------------------------->
+ 5897 ms: lendo bloco 136
+ 5945 ms: buffer: [<--bloco 0136------------------------------------------------->
 ]
- 5953 ms: lendo bloco 137
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 5992 ms: buffer: [<--bloco 0137------------------------------------------------->
+ 5945 ms: lendo bloco 137
+ 5984 ms: buffer: [<--bloco 0137------------------------------------------------->
 ]
- 5992 ms: lendo bloco 138
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6028 ms: buffer: [<--bloco 0138------------------------------------------------->
+ 5984 ms: lendo bloco 138
+ 6020 ms: buffer: [<--bloco 0138------------------------------------------------->
 ]
- 6029 ms: lendo bloco 139
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6085 ms: buffer: [<--bloco 0139------------------------------------------------->
+ 6021 ms: lendo bloco 139
+ 6077 ms: buffer: [<--bloco 0139------------------------------------------------->
 ]
- 6085 ms: lendo bloco 140
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6127 ms: buffer: [<--bloco 0140------------------------------------------------->
+ 6077 ms: lendo bloco 140
+ 6119 ms: buffer: [<--bloco 0140------------------------------------------------->
 ]
- 6128 ms: lendo bloco 141
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6170 ms: buffer: [<--bloco 0141------------------------------------------------->
+ 6119 ms: lendo bloco 141
+ 6162 ms: buffer: [<--bloco 0141------------------------------------------------->
 ]
- 6170 ms: lendo bloco 142
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6201 ms: buffer: [<--bloco 0142------------------------------------------------->
+ 6162 ms: lendo bloco 142
+ 6193 ms: buffer: [<--bloco 0142------------------------------------------------->
 ]
- 6202 ms: lendo bloco 143
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6259 ms: buffer: [<--bloco 0143------------------------------------------------->
+ 6193 ms: lendo bloco 143
+ 6250 ms: buffer: [<--bloco 0143------------------------------------------------->
 ]
- 6260 ms: lendo bloco 144
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6309 ms: buffer: [<--bloco 0144------------------------------------------------->
+ 6251 ms: lendo bloco 144
+ 6300 ms: buffer: [<--bloco 0144------------------------------------------------->
 ]
- 6309 ms: lendo bloco 145
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6351 ms: buffer: [<--bloco 0145------------------------------------------------->
+ 6300 ms: lendo bloco 145
+ 6342 ms: buffer: [<--bloco 0145------------------------------------------------->
 ]
- 6352 ms: lendo bloco 146
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6383 ms: buffer: [<--bloco 0146------------------------------------------------->
+ 6343 ms: lendo bloco 146
+ 6374 ms: buffer: [<--bloco 0146------------------------------------------------->
 ]
- 6383 ms: lendo bloco 147
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6433 ms: buffer: [<--bloco 0147------------------------------------------------->
+ 6374 ms: lendo bloco 147
+ 6424 ms: buffer: [<--bloco 0147------------------------------------------------->
 ]
- 6434 ms: lendo bloco 148
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6491 ms: buffer: [<--bloco 0148------------------------------------------------->
+ 6425 ms: lendo bloco 148
+ 6482 ms: buffer: [<--bloco 0148------------------------------------------------->
 ]
- 6492 ms: lendo bloco 149
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6529 ms: buffer: [<--bloco 0149------------------------------------------------->
+ 6482 ms: lendo bloco 149
+ 6519 ms: buffer: [<--bloco 0149------------------------------------------------->
 ]
- 6529 ms: lendo bloco 150
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6573 ms: buffer: [<--bloco 0150------------------------------------------------->
+ 6520 ms: lendo bloco 150
+ 6564 ms: buffer: [<--bloco 0150------------------------------------------------->
 ]
- 6574 ms: lendo bloco 151
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6626 ms: buffer: [<--bloco 0151------------------------------------------------->
+ 6564 ms: lendo bloco 151
+ 6616 ms: buffer: [<--bloco 0151------------------------------------------------->
 ]
- 6626 ms: lendo bloco 152
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6666 ms: buffer: [<--bloco 0152------------------------------------------------->
+ 6616 ms: lendo bloco 152
+ 6657 ms: buffer: [<--bloco 0152------------------------------------------------->
 ]
- 6667 ms: lendo bloco 153
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6715 ms: buffer: [<--bloco 0153------------------------------------------------->
+ 6657 ms: lendo bloco 153
+ 6705 ms: buffer: [<--bloco 0153------------------------------------------------->
 ]
- 6716 ms: lendo bloco 154
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6753 ms: buffer: [<--bloco 0154------------------------------------------------->
+ 6705 ms: lendo bloco 154
+ 6742 ms: buffer: [<--bloco 0154------------------------------------------------->
 ]
- 6753 ms: lendo bloco 155
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6798 ms: buffer: [<--bloco 0155------------------------------------------------->
+ 6743 ms: lendo bloco 155
+ 6788 ms: buffer: [<--bloco 0155------------------------------------------------->
 ]
- 6799 ms: lendo bloco 156
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6844 ms: buffer: [<--bloco 0156------------------------------------------------->
+ 6788 ms: lendo bloco 156
+ 6833 ms: buffer: [<--bloco 0156------------------------------------------------->
 ]
- 6844 ms: lendo bloco 157
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6889 ms: buffer: [<--bloco 0157------------------------------------------------->
+ 6834 ms: lendo bloco 157
+ 6879 ms: buffer: [<--bloco 0157------------------------------------------------->
 ]
- 6890 ms: lendo bloco 158
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6942 ms: buffer: [<--bloco 0158------------------------------------------------->
+ 6879 ms: lendo bloco 158
+ 6931 ms: buffer: [<--bloco 0158------------------------------------------------->
 ]
- 6942 ms: lendo bloco 159
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 6989 ms: buffer: [<--bloco 0159------------------------------------------------->
+ 6932 ms: lendo bloco 159
+ 6978 ms: buffer: [<--bloco 0159------------------------------------------------->
 ]
- 6989 ms: lendo bloco 160
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7040 ms: buffer: [<--bloco 0160------------------------------------------------->
+ 6978 ms: lendo bloco 160
+ 7029 ms: buffer: [<--bloco 0160------------------------------------------------->
 ]
- 7041 ms: lendo bloco 161
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7080 ms: buffer: [<--bloco 0161------------------------------------------------->
+ 7030 ms: lendo bloco 161
+ 7069 ms: buffer: [<--bloco 0161------------------------------------------------->
 ]
- 7080 ms: lendo bloco 162
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7133 ms: buffer: [<--bloco 0162------------------------------------------------->
+ 7069 ms: lendo bloco 162
+ 7122 ms: buffer: [<--bloco 0162------------------------------------------------->
 ]
- 7134 ms: lendo bloco 163
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7180 ms: buffer: [<--bloco 0163------------------------------------------------->
+ 7123 ms: lendo bloco 163
+ 7169 ms: buffer: [<--bloco 0163------------------------------------------------->
 ]
- 7180 ms: lendo bloco 164
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7211 ms: buffer: [<--bloco 0164------------------------------------------------->
+ 7169 ms: lendo bloco 164
+ 7200 ms: buffer: [<--bloco 0164------------------------------------------------->
 ]
- 7212 ms: lendo bloco 165
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7266 ms: buffer: [<--bloco 0165------------------------------------------------->
+ 7201 ms: lendo bloco 165
+ 7255 ms: buffer: [<--bloco 0165------------------------------------------------->
 ]
- 7267 ms: lendo bloco 166
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7314 ms: buffer: [<--bloco 0166------------------------------------------------->
+ 7256 ms: lendo bloco 166
+ 7303 ms: buffer: [<--bloco 0166------------------------------------------------->
 ]
- 7314 ms: lendo bloco 167
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7358 ms: buffer: [<--bloco 0167------------------------------------------------->
+ 7303 ms: lendo bloco 167
+ 7347 ms: buffer: [<--bloco 0167------------------------------------------------->
 ]
- 7359 ms: lendo bloco 168
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7394 ms: buffer: [<--bloco 0168------------------------------------------------->
+ 7347 ms: lendo bloco 168
+ 7383 ms: buffer: [<--bloco 0168------------------------------------------------->
 ]
- 7394 ms: lendo bloco 169
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7443 ms: buffer: [<--bloco 0169------------------------------------------------->
+ 7383 ms: lendo bloco 169
+ 7432 ms: buffer: [<--bloco 0169------------------------------------------------->
 ]
- 7444 ms: lendo bloco 170
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7486 ms: buffer: [<--bloco 0170------------------------------------------------->
+ 7432 ms: lendo bloco 170
+ 7475 ms: buffer: [<--bloco 0170------------------------------------------------->
 ]
- 7487 ms: lendo bloco 171
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7530 ms: buffer: [<--bloco 0171------------------------------------------------->
+ 7475 ms: lendo bloco 171
+ 7518 ms: buffer: [<--bloco 0171------------------------------------------------->
 ]
- 7530 ms: lendo bloco 172
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7586 ms: buffer: [<--bloco 0172------------------------------------------------->
+ 7518 ms: lendo bloco 172
+ 7574 ms: buffer: [<--bloco 0172------------------------------------------------->
 ]
- 7587 ms: lendo bloco 173
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7629 ms: buffer: [<--bloco 0173------------------------------------------------->
+ 7575 ms: lendo bloco 173
+ 7617 ms: buffer: [<--bloco 0173------------------------------------------------->
 ]
- 7629 ms: lendo bloco 174
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7672 ms: buffer: [<--bloco 0174------------------------------------------------->
+ 7617 ms: lendo bloco 174
+ 7660 ms: buffer: [<--bloco 0174------------------------------------------------->
 ]
- 7673 ms: lendo bloco 175
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7721 ms: buffer: [<--bloco 0175------------------------------------------------->
+ 7661 ms: lendo bloco 175
+ 7709 ms: buffer: [<--bloco 0175------------------------------------------------->
 ]
- 7721 ms: lendo bloco 176
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7771 ms: buffer: [<--bloco 0176------------------------------------------------->
+ 7709 ms: lendo bloco 176
+ 7759 ms: buffer: [<--bloco 0176------------------------------------------------->
 ]
- 7772 ms: lendo bloco 177
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7811 ms: buffer: [<--bloco 0177------------------------------------------------->
+ 7760 ms: lendo bloco 177
+ 7799 ms: buffer: [<--bloco 0177------------------------------------------------->
 ]
- 7812 ms: lendo bloco 178
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7852 ms: buffer: [<--bloco 0178------------------------------------------------->
+ 7799 ms: lendo bloco 178
+ 7839 ms: buffer: [<--bloco 0178------------------------------------------------->
 ]
- 7852 ms: lendo bloco 179
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7902 ms: buffer: [<--bloco 0179------------------------------------------------->
+ 7839 ms: lendo bloco 179
+ 7890 ms: buffer: [<--bloco 0179------------------------------------------------->
 ]
- 7903 ms: lendo bloco 180
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7945 ms: buffer: [<--bloco 0180------------------------------------------------->
+ 7890 ms: lendo bloco 180
+ 7932 ms: buffer: [<--bloco 0180------------------------------------------------->
 ]
- 7945 ms: lendo bloco 181
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 7995 ms: buffer: [<--bloco 0181------------------------------------------------->
+ 7932 ms: lendo bloco 181
+ 7983 ms: buffer: [<--bloco 0181------------------------------------------------->
 ]
- 7996 ms: lendo bloco 182
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8037 ms: buffer: [<--bloco 0182------------------------------------------------->
+ 7983 ms: lendo bloco 182
+ 8024 ms: buffer: [<--bloco 0182------------------------------------------------->
 ]
- 8038 ms: lendo bloco 183
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8089 ms: buffer: [<--bloco 0183------------------------------------------------->
+ 8024 ms: lendo bloco 183
+ 8075 ms: buffer: [<--bloco 0183------------------------------------------------->
 ]
- 8089 ms: lendo bloco 184
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8129 ms: buffer: [<--bloco 0184------------------------------------------------->
+ 8076 ms: lendo bloco 184
+ 8116 ms: buffer: [<--bloco 0184------------------------------------------------->
 ]
- 8130 ms: lendo bloco 185
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8174 ms: buffer: [<--bloco 0185------------------------------------------------->
+ 8116 ms: lendo bloco 185
+ 8160 ms: buffer: [<--bloco 0185------------------------------------------------->
 ]
- 8174 ms: lendo bloco 186
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8213 ms: buffer: [<--bloco 0186------------------------------------------------->
+ 8161 ms: lendo bloco 186
+ 8200 ms: buffer: [<--bloco 0186------------------------------------------------->
 ]
- 8214 ms: lendo bloco 187
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8269 ms: buffer: [<--bloco 0187------------------------------------------------->
+ 8200 ms: lendo bloco 187
+ 8255 ms: buffer: [<--bloco 0187------------------------------------------------->
 ]
- 8269 ms: lendo bloco 188
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8301 ms: buffer: [<--bloco 0188------------------------------------------------->
+ 8255 ms: lendo bloco 188
+ 8286 ms: buffer: [<--bloco 0188------------------------------------------------->
 ]
- 8301 ms: lendo bloco 189
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8334 ms: buffer: [<--bloco 0189------------------------------------------------->
+ 8287 ms: lendo bloco 189
+ 8320 ms: buffer: [<--bloco 0189------------------------------------------------->
 ]
- 8335 ms: lendo bloco 190
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8374 ms: buffer: [<--bloco 0190------------------------------------------------->
+ 8320 ms: lendo bloco 190
+ 8359 ms: buffer: [<--bloco 0190------------------------------------------------->
 ]
- 8374 ms: lendo bloco 191
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8426 ms: buffer: [<--bloco 0191------------------------------------------------->
+ 8360 ms: lendo bloco 191
+ 8412 ms: buffer: [<--bloco 0191------------------------------------------------->
 ]
- 8427 ms: lendo bloco 192
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8465 ms: buffer: [<--bloco 0192------------------------------------------------->
+ 8412 ms: lendo bloco 192
+ 8450 ms: buffer: [<--bloco 0192------------------------------------------------->
 ]
- 8465 ms: lendo bloco 193
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8500 ms: buffer: [<--bloco 0193------------------------------------------------->
+ 8451 ms: lendo bloco 193
+ 8486 ms: buffer: [<--bloco 0193------------------------------------------------->
 ]
- 8501 ms: lendo bloco 194
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8538 ms: buffer: [<--bloco 0194------------------------------------------------->
+ 8486 ms: lendo bloco 194
+ 8523 ms: buffer: [<--bloco 0194------------------------------------------------->
 ]
- 8539 ms: lendo bloco 195
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8573 ms: buffer: [<--bloco 0195------------------------------------------------->
+ 8524 ms: lendo bloco 195
+ 8558 ms: buffer: [<--bloco 0195------------------------------------------------->
 ]
- 8573 ms: lendo bloco 196
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8604 ms: buffer: [<--bloco 0196------------------------------------------------->
+ 8558 ms: lendo bloco 196
+ 8589 ms: buffer: [<--bloco 0196------------------------------------------------->
 ]
- 8605 ms: lendo bloco 197
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8659 ms: buffer: [<--bloco 0197------------------------------------------------->
+ 8589 ms: lendo bloco 197
+ 8643 ms: buffer: [<--bloco 0197------------------------------------------------->
 ]
- 8659 ms: lendo bloco 198
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8706 ms: buffer: [<--bloco 0198------------------------------------------------->
+ 8644 ms: lendo bloco 198
+ 8691 ms: buffer: [<--bloco 0198------------------------------------------------->
 ]
- 8707 ms: lendo bloco 199
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8738 ms: buffer: [<--bloco 0199------------------------------------------------->
+ 8691 ms: lendo bloco 199
+ 8722 ms: buffer: [<--bloco 0199------------------------------------------------->
 ]
- 8738 ms: lendo bloco 200
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8784 ms: buffer: [<--bloco 0200------------------------------------------------->
+ 8722 ms: lendo bloco 200
+ 8768 ms: buffer: [<--bloco 0200------------------------------------------------->
 ]
- 8784 ms: lendo bloco 201
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8839 ms: buffer: [<--bloco 0201------------------------------------------------->
+ 8768 ms: lendo bloco 201
+ 8823 ms: buffer: [<--bloco 0201------------------------------------------------->
 ]
- 8840 ms: lendo bloco 202
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8884 ms: buffer: [<--bloco 0202------------------------------------------------->
+ 8823 ms: lendo bloco 202
+ 8867 ms: buffer: [<--bloco 0202------------------------------------------------->
 ]
- 8884 ms: lendo bloco 203
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8928 ms: buffer: [<--bloco 0203------------------------------------------------->
+ 8867 ms: lendo bloco 203
+ 8912 ms: buffer: [<--bloco 0203------------------------------------------------->
 ]
- 8929 ms: lendo bloco 204
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 8965 ms: buffer: [<--bloco 0204------------------------------------------------->
+ 8912 ms: lendo bloco 204
+ 8948 ms: buffer: [<--bloco 0204------------------------------------------------->
 ]
- 8965 ms: lendo bloco 205
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9017 ms: buffer: [<--bloco 0205------------------------------------------------->
+ 8948 ms: lendo bloco 205
+ 9000 ms: buffer: [<--bloco 0205------------------------------------------------->
 ]
- 9018 ms: lendo bloco 206
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9075 ms: buffer: [<--bloco 0206------------------------------------------------->
+ 9001 ms: lendo bloco 206
+ 9058 ms: buffer: [<--bloco 0206------------------------------------------------->
 ]
- 9075 ms: lendo bloco 207
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9131 ms: buffer: [<--bloco 0207------------------------------------------------->
+ 9058 ms: lendo bloco 207
+ 9114 ms: buffer: [<--bloco 0207------------------------------------------------->
 ]
- 9132 ms: lendo bloco 208
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9166 ms: buffer: [<--bloco 0208------------------------------------------------->
+ 9114 ms: lendo bloco 208
+ 9148 ms: buffer: [<--bloco 0208------------------------------------------------->
 ]
- 9166 ms: lendo bloco 209
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9202 ms: buffer: [<--bloco 0209------------------------------------------------->
+ 9149 ms: lendo bloco 209
+ 9185 ms: buffer: [<--bloco 0209------------------------------------------------->
 ]
- 9203 ms: lendo bloco 210
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9247 ms: buffer: [<--bloco 0210------------------------------------------------->
+ 9185 ms: lendo bloco 210
+ 9229 ms: buffer: [<--bloco 0210------------------------------------------------->
 ]
- 9247 ms: lendo bloco 211
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9288 ms: buffer: [<--bloco 0211------------------------------------------------->
+ 9229 ms: lendo bloco 211
+ 9271 ms: buffer: [<--bloco 0211------------------------------------------------->
 ]
- 9289 ms: lendo bloco 212
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9344 ms: buffer: [<--bloco 0212------------------------------------------------->
+ 9271 ms: lendo bloco 212
+ 9326 ms: buffer: [<--bloco 0212------------------------------------------------->
 ]
- 9344 ms: lendo bloco 213
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9395 ms: buffer: [<--bloco 0213------------------------------------------------->
+ 9326 ms: lendo bloco 213
+ 9377 ms: buffer: [<--bloco 0213------------------------------------------------->
 ]
- 9396 ms: lendo bloco 214
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9431 ms: buffer: [<--bloco 0214------------------------------------------------->
+ 9378 ms: lendo bloco 214
+ 9413 ms: buffer: [<--bloco 0214------------------------------------------------->
 ]
- 9431 ms: lendo bloco 215
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9465 ms: buffer: [<--bloco 0215------------------------------------------------->
+ 9413 ms: lendo bloco 215
+ 9447 ms: buffer: [<--bloco 0215------------------------------------------------->
 ]
- 9466 ms: lendo bloco 216
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9504 ms: buffer: [<--bloco 0216------------------------------------------------->
+ 9448 ms: lendo bloco 216
+ 9486 ms: buffer: [<--bloco 0216------------------------------------------------->
 ]
- 9504 ms: lendo bloco 217
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9544 ms: buffer: [<--bloco 0217------------------------------------------------->
+ 9486 ms: lendo bloco 217
+ 9526 ms: buffer: [<--bloco 0217------------------------------------------------->
 ]
- 9544 ms: lendo bloco 218
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9599 ms: buffer: [<--bloco 0218------------------------------------------------->
+ 9526 ms: lendo bloco 218
+ 9581 ms: buffer: [<--bloco 0218------------------------------------------------->
 ]
- 9600 ms: lendo bloco 219
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9639 ms: buffer: [<--bloco 0219------------------------------------------------->
+ 9582 ms: lendo bloco 219
+ 9621 ms: buffer: [<--bloco 0219------------------------------------------------->
 ]
- 9639 ms: lendo bloco 220
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9678 ms: buffer: [<--bloco 0220------------------------------------------------->
+ 9621 ms: lendo bloco 220
+ 9660 ms: buffer: [<--bloco 0220------------------------------------------------->
 ]
- 9679 ms: lendo bloco 221
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9715 ms: buffer: [<--bloco 0221------------------------------------------------->
+ 9661 ms: lendo bloco 221
+ 9697 ms: buffer: [<--bloco 0221------------------------------------------------->
 ]
- 9715 ms: lendo bloco 222
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9772 ms: buffer: [<--bloco 0222------------------------------------------------->
+ 9697 ms: lendo bloco 222
+ 9754 ms: buffer: [<--bloco 0222------------------------------------------------->
 ]
- 9773 ms: lendo bloco 223
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9819 ms: buffer: [<--bloco 0223------------------------------------------------->
+ 9755 ms: lendo bloco 223
+ 9801 ms: buffer: [<--bloco 0223------------------------------------------------->
 ]
- 9819 ms: lendo bloco 224
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9856 ms: buffer: [<--bloco 0224------------------------------------------------->
+ 9801 ms: lendo bloco 224
+ 9838 ms: buffer: [<--bloco 0224------------------------------------------------->
 ]
- 9857 ms: lendo bloco 225
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9894 ms: buffer: [<--bloco 0225------------------------------------------------->
+ 9838 ms: lendo bloco 225
+ 9875 ms: buffer: [<--bloco 0225------------------------------------------------->
 ]
- 9895 ms: lendo bloco 226
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9941 ms: buffer: [<--bloco 0226------------------------------------------------->
+ 9876 ms: lendo bloco 226
+ 9922 ms: buffer: [<--bloco 0226------------------------------------------------->
 ]
- 9941 ms: lendo bloco 227
-
-0 foi a distancia percorrida entre o request e o bloco retornado
- 9974 ms: buffer: [<--bloco 0227------------------------------------------------->
+ 9922 ms: lendo bloco 227
+ 9955 ms: buffer: [<--bloco 0227------------------------------------------------->
 ]
- 9975 ms: lendo bloco 228
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10031 ms: buffer: [<--bloco 0228------------------------------------------------->
+ 9955 ms: lendo bloco 228
+10011 ms: buffer: [<--bloco 0228------------------------------------------------->
 ]
-10031 ms: lendo bloco 229
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10063 ms: buffer: [<--bloco 0229------------------------------------------------->
+10012 ms: lendo bloco 229
+10044 ms: buffer: [<--bloco 0229------------------------------------------------->
 ]
-10064 ms: lendo bloco 230
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10098 ms: buffer: [<--bloco 0230------------------------------------------------->
+10044 ms: lendo bloco 230
+10078 ms: buffer: [<--bloco 0230------------------------------------------------->
 ]
-10098 ms: lendo bloco 231
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10138 ms: buffer: [<--bloco 0231------------------------------------------------->
+10078 ms: lendo bloco 231
+10118 ms: buffer: [<--bloco 0231------------------------------------------------->
 ]
-10139 ms: lendo bloco 232
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10192 ms: buffer: [<--bloco 0232------------------------------------------------->
+10119 ms: lendo bloco 232
+10172 ms: buffer: [<--bloco 0232------------------------------------------------->
 ]
-10193 ms: lendo bloco 233
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10237 ms: buffer: [<--bloco 0233------------------------------------------------->
+10172 ms: lendo bloco 233
+10216 ms: buffer: [<--bloco 0233------------------------------------------------->
 ]
-10237 ms: lendo bloco 234
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10286 ms: buffer: [<--bloco 0234------------------------------------------------->
+10217 ms: lendo bloco 234
+10266 ms: buffer: [<--bloco 0234------------------------------------------------->
 ]
-10287 ms: lendo bloco 235
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10341 ms: buffer: [<--bloco 0235------------------------------------------------->
+10266 ms: lendo bloco 235
+10320 ms: buffer: [<--bloco 0235------------------------------------------------->
 ]
-10341 ms: lendo bloco 236
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10376 ms: buffer: [<--bloco 0236------------------------------------------------->
+10321 ms: lendo bloco 236
+10356 ms: buffer: [<--bloco 0236------------------------------------------------->
 ]
-10377 ms: lendo bloco 237
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10426 ms: buffer: [<--bloco 0237------------------------------------------------->
+10356 ms: lendo bloco 237
+10405 ms: buffer: [<--bloco 0237------------------------------------------------->
 ]
-10427 ms: lendo bloco 238
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10479 ms: buffer: [<--bloco 0238------------------------------------------------->
+10406 ms: lendo bloco 238
+10458 ms: buffer: [<--bloco 0238------------------------------------------------->
 ]
-10479 ms: lendo bloco 239
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10514 ms: buffer: [<--bloco 0239------------------------------------------------->
+10458 ms: lendo bloco 239
+10493 ms: buffer: [<--bloco 0239------------------------------------------------->
 ]
-10515 ms: lendo bloco 240
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10570 ms: buffer: [<--bloco 0240------------------------------------------------->
+10494 ms: lendo bloco 240
+10549 ms: buffer: [<--bloco 0240------------------------------------------------->
 ]
-10570 ms: lendo bloco 241
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10605 ms: buffer: [<--bloco 0241------------------------------------------------->
+10549 ms: lendo bloco 241
+10584 ms: buffer: [<--bloco 0241------------------------------------------------->
 ]
-10606 ms: lendo bloco 242
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10651 ms: buffer: [<--bloco 0242------------------------------------------------->
+10585 ms: lendo bloco 242
+10630 ms: buffer: [<--bloco 0242------------------------------------------------->
 ]
-10652 ms: lendo bloco 243
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10701 ms: buffer: [<--bloco 0243------------------------------------------------->
+10630 ms: lendo bloco 243
+10679 ms: buffer: [<--bloco 0243------------------------------------------------->
 ]
-10701 ms: lendo bloco 244
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10757 ms: buffer: [<--bloco 0244------------------------------------------------->
+10680 ms: lendo bloco 244
+10736 ms: buffer: [<--bloco 0244------------------------------------------------->
 ]
-10758 ms: lendo bloco 245
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10804 ms: buffer: [<--bloco 0245------------------------------------------------->
+10736 ms: lendo bloco 245
+10781 ms: buffer: [<--bloco 0245------------------------------------------------->
 ]
-10804 ms: lendo bloco 246
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10857 ms: buffer: [<--bloco 0246------------------------------------------------->
+10782 ms: lendo bloco 246
+10834 ms: buffer: [<--bloco 0246------------------------------------------------->
 ]
-10858 ms: lendo bloco 247
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10891 ms: buffer: [<--bloco 0247------------------------------------------------->
+10834 ms: lendo bloco 247
+10867 ms: buffer: [<--bloco 0247------------------------------------------------->
 ]
-10891 ms: lendo bloco 248
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10947 ms: buffer: [<--bloco 0248------------------------------------------------->
+10868 ms: lendo bloco 248
+10922 ms: buffer: [<--bloco 0248------------------------------------------------->
 ]
-10948 ms: lendo bloco 249
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-10998 ms: buffer: [<--bloco 0249------------------------------------------------->
+10922 ms: lendo bloco 249
+10972 ms: buffer: [<--bloco 0249------------------------------------------------->
 ]
-10998 ms: lendo bloco 250
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11039 ms: buffer: [<--bloco 0250------------------------------------------------->
+10973 ms: lendo bloco 250
+11013 ms: buffer: [<--bloco 0250------------------------------------------------->
 ]
-11040 ms: lendo bloco 251
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11077 ms: buffer: [<--bloco 0251------------------------------------------------->
+11014 ms: lendo bloco 251
+11051 ms: buffer: [<--bloco 0251------------------------------------------------->
 ]
-11077 ms: lendo bloco 252
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11129 ms: buffer: [<--bloco 0252------------------------------------------------->
+11051 ms: lendo bloco 252
+11103 ms: buffer: [<--bloco 0252------------------------------------------------->
 ]
-11130 ms: lendo bloco 253
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11167 ms: buffer: [<--bloco 0253------------------------------------------------->
+11104 ms: lendo bloco 253
+11141 ms: buffer: [<--bloco 0253------------------------------------------------->
 ]
-11167 ms: lendo bloco 254
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11215 ms: buffer: [<--bloco 0254------------------------------------------------->
+11141 ms: lendo bloco 254
+11189 ms: buffer: [<--bloco 0254------------------------------------------------->
 ]
-11216 ms: lendo bloco 255
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11247 ms: buffer: [<--bloco 0255------------------------------------------------->
+11190 ms: lendo bloco 255
+11221 ms: buffer: [<--bloco 0255------------------------------------------------->
 ]
-11247 ms: escrevendo bloco 0 com caracteres "D"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11570 ms: escrevendo bloco 1 com caracteres "*"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11618 ms: escrevendo bloco 2 com caracteres "7"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11653 ms: escrevendo bloco 3 com caracteres "7"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11688 ms: escrevendo bloco 4 com caracteres "B"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11721 ms: escrevendo bloco 5 com caracteres "M"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11768 ms: escrevendo bloco 6 com caracteres "%"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11818 ms: escrevendo bloco 7 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11851 ms: escrevendo bloco 8 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11909 ms: escrevendo bloco 9 com caracteres "$"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11945 ms: escrevendo bloco 10 com caracteres "H"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-11978 ms: escrevendo bloco 11 com caracteres "L"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12026 ms: escrevendo bloco 12 com caracteres """
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12065 ms: escrevendo bloco 13 com caracteres ","
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12098 ms: escrevendo bloco 14 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12133 ms: escrevendo bloco 15 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12166 ms: escrevendo bloco 16 com caracteres "L"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12210 ms: escrevendo bloco 17 com caracteres "'"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12250 ms: escrevendo bloco 18 com caracteres "+"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12287 ms: escrevendo bloco 19 com caracteres "4"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12333 ms: escrevendo bloco 20 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12390 ms: escrevendo bloco 21 com caracteres "+"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12425 ms: escrevendo bloco 22 com caracteres "M"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12473 ms: escrevendo bloco 23 com caracteres "E"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12519 ms: escrevendo bloco 24 com caracteres "4"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12554 ms: escrevendo bloco 25 com caracteres """
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12587 ms: escrevendo bloco 26 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12638 ms: escrevendo bloco 27 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12685 ms: escrevendo bloco 28 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12732 ms: escrevendo bloco 29 com caracteres "$"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12769 ms: escrevendo bloco 30 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12801 ms: escrevendo bloco 31 com caracteres ")"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12844 ms: escrevendo bloco 32 com caracteres "4"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12893 ms: escrevendo bloco 33 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-12944 ms: escrevendo bloco 34 com caracteres "."
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13000 ms: escrevendo bloco 35 com caracteres "L"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13053 ms: escrevendo bloco 36 com caracteres "E"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13091 ms: escrevendo bloco 37 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13136 ms: escrevendo bloco 38 com caracteres "0"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13194 ms: escrevendo bloco 39 com caracteres " "
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13229 ms: escrevendo bloco 40 com caracteres "M"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13271 ms: escrevendo bloco 41 com caracteres "0"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13306 ms: escrevendo bloco 42 com caracteres "@"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13352 ms: escrevendo bloco 43 com caracteres "*"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13410 ms: escrevendo bloco 44 com caracteres "#"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13443 ms: escrevendo bloco 45 com caracteres "9"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13490 ms: escrevendo bloco 46 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13527 ms: escrevendo bloco 47 com caracteres "N"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13566 ms: escrevendo bloco 48 com caracteres "B"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13614 ms: escrevendo bloco 49 com caracteres "@"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13655 ms: escrevendo bloco 50 com caracteres "B"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13690 ms: escrevendo bloco 51 com caracteres "-"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13728 ms: escrevendo bloco 52 com caracteres "#"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13786 ms: escrevendo bloco 53 com caracteres "J"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13843 ms: escrevendo bloco 54 com caracteres " "
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13887 ms: escrevendo bloco 55 com caracteres "H"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-13943 ms: escrevendo bloco 56 com caracteres ","
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14000 ms: escrevendo bloco 57 com caracteres "'"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14058 ms: escrevendo bloco 58 com caracteres "D"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14102 ms: escrevendo bloco 59 com caracteres "<"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14144 ms: escrevendo bloco 60 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14202 ms: escrevendo bloco 61 com caracteres "*"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14246 ms: escrevendo bloco 62 com caracteres "H"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14304 ms: escrevendo bloco 63 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14354 ms: escrevendo bloco 64 com caracteres "&"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14401 ms: escrevendo bloco 65 com caracteres "<"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14456 ms: escrevendo bloco 66 com caracteres "9"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14512 ms: escrevendo bloco 67 com caracteres " "
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14566 ms: escrevendo bloco 68 com caracteres "%"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14616 ms: escrevendo bloco 69 com caracteres "A"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14662 ms: escrevendo bloco 70 com caracteres "E"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14709 ms: escrevendo bloco 71 com caracteres "2"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14763 ms: escrevendo bloco 72 com caracteres """
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14804 ms: escrevendo bloco 73 com caracteres "."
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14858 ms: escrevendo bloco 74 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14906 ms: escrevendo bloco 75 com caracteres "."
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14942 ms: escrevendo bloco 76 com caracteres "!"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-14975 ms: escrevendo bloco 77 com caracteres "7"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15019 ms: escrevendo bloco 78 com caracteres "1"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15052 ms: escrevendo bloco 79 com caracteres "4"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15094 ms: escrevendo bloco 80 com caracteres "B"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15127 ms: escrevendo bloco 81 com caracteres "@"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15161 ms: escrevendo bloco 82 com caracteres "9"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15197 ms: escrevendo bloco 83 com caracteres "("
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15248 ms: escrevendo bloco 84 com caracteres "J"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15295 ms: escrevendo bloco 85 com caracteres "3"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15349 ms: escrevendo bloco 86 com caracteres "#"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15395 ms: escrevendo bloco 87 com caracteres "1"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15441 ms: escrevendo bloco 88 com caracteres "O"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15480 ms: escrevendo bloco 89 com caracteres "<"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15523 ms: escrevendo bloco 90 com caracteres "*"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15567 ms: escrevendo bloco 91 com caracteres "4"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15604 ms: escrevendo bloco 92 com caracteres "3"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15661 ms: escrevendo bloco 93 com caracteres "5"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15700 ms: escrevendo bloco 94 com caracteres "0"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15749 ms: escrevendo bloco 95 com caracteres ","
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15787 ms: escrevendo bloco 96 com caracteres "J"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15839 ms: escrevendo bloco 97 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15881 ms: escrevendo bloco 98 com caracteres "<"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15915 ms: escrevendo bloco 99 com caracteres "B"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-15964 ms: escrevendo bloco 100 com caracteres "/"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16001 ms: escrevendo bloco 101 com caracteres "F"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16050 ms: escrevendo bloco 102 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16107 ms: escrevendo bloco 103 com caracteres "("
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16144 ms: escrevendo bloco 104 com caracteres "6"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16188 ms: escrevendo bloco 105 com caracteres "4"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16242 ms: escrevendo bloco 106 com caracteres "/"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16276 ms: escrevendo bloco 107 com caracteres "<"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16315 ms: escrevendo bloco 108 com caracteres "$"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16365 ms: escrevendo bloco 109 com caracteres "G"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16417 ms: escrevendo bloco 110 com caracteres ";"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16451 ms: escrevendo bloco 111 com caracteres "F"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16503 ms: escrevendo bloco 112 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16539 ms: escrevendo bloco 113 com caracteres "("
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16584 ms: escrevendo bloco 114 com caracteres "I"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16618 ms: escrevendo bloco 115 com caracteres """
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16669 ms: escrevendo bloco 116 com caracteres " "
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16709 ms: escrevendo bloco 117 com caracteres "+"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16757 ms: escrevendo bloco 118 com caracteres "/"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16804 ms: escrevendo bloco 119 com caracteres "5"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16842 ms: escrevendo bloco 120 com caracteres "8"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16885 ms: escrevendo bloco 121 com caracteres "F"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16936 ms: escrevendo bloco 122 com caracteres "!"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-16971 ms: escrevendo bloco 123 com caracteres "*"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17010 ms: escrevendo bloco 124 com caracteres "D"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17049 ms: escrevendo bloco 125 com caracteres "I"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17105 ms: escrevendo bloco 126 com caracteres "5"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17155 ms: escrevendo bloco 127 com caracteres "$"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17207 ms: escrevendo bloco 128 com caracteres "C"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17252 ms: escrevendo bloco 129 com caracteres "@"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17308 ms: escrevendo bloco 130 com caracteres "G"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17342 ms: escrevendo bloco 131 com caracteres "E"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17389 ms: escrevendo bloco 132 com caracteres "J"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17445 ms: escrevendo bloco 133 com caracteres "2"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17487 ms: escrevendo bloco 134 com caracteres "D"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17545 ms: escrevendo bloco 135 com caracteres "/"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17582 ms: escrevendo bloco 136 com caracteres " "
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17632 ms: escrevendo bloco 137 com caracteres "$"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17682 ms: escrevendo bloco 138 com caracteres "H"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17731 ms: escrevendo bloco 139 com caracteres "'"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17768 ms: escrevendo bloco 140 com caracteres "@"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17817 ms: escrevendo bloco 141 com caracteres ","
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17849 ms: escrevendo bloco 142 com caracteres "0"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17892 ms: escrevendo bloco 143 com caracteres ";"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17924 ms: escrevendo bloco 144 com caracteres "."
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-17979 ms: escrevendo bloco 145 com caracteres "0"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18025 ms: escrevendo bloco 146 com caracteres ">"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18064 ms: escrevendo bloco 147 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18102 ms: escrevendo bloco 148 com caracteres "F"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18139 ms: escrevendo bloco 149 com caracteres "2"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18177 ms: escrevendo bloco 150 com caracteres "G"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18211 ms: escrevendo bloco 151 com caracteres "7"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18254 ms: escrevendo bloco 152 com caracteres "&"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18287 ms: escrevendo bloco 153 com caracteres ")"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18327 ms: escrevendo bloco 154 com caracteres "*"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18383 ms: escrevendo bloco 155 com caracteres ","
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18425 ms: escrevendo bloco 156 com caracteres "B"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18468 ms: escrevendo bloco 157 com caracteres "0"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18521 ms: escrevendo bloco 158 com caracteres "9"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18579 ms: escrevendo bloco 159 com caracteres "F"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18632 ms: escrevendo bloco 160 com caracteres "G"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18680 ms: escrevendo bloco 161 com caracteres "-"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18731 ms: escrevendo bloco 162 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18767 ms: escrevendo bloco 163 com caracteres "M"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18823 ms: escrevendo bloco 164 com caracteres ")"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18866 ms: escrevendo bloco 165 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18902 ms: escrevendo bloco 166 com caracteres "0"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18945 ms: escrevendo bloco 167 com caracteres "("
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-18981 ms: escrevendo bloco 168 com caracteres "0"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19028 ms: escrevendo bloco 169 com caracteres "6"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19061 ms: escrevendo bloco 170 com caracteres """
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19115 ms: escrevendo bloco 171 com caracteres "$"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19167 ms: escrevendo bloco 172 com caracteres "J"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19218 ms: escrevendo bloco 173 com caracteres "7"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19275 ms: escrevendo bloco 174 com caracteres " "
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19316 ms: escrevendo bloco 175 com caracteres ";"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19358 ms: escrevendo bloco 176 com caracteres "#"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19407 ms: escrevendo bloco 177 com caracteres ","
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19457 ms: escrevendo bloco 178 com caracteres "2"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19510 ms: escrevendo bloco 179 com caracteres " "
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19564 ms: escrevendo bloco 180 com caracteres "I"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19611 ms: escrevendo bloco 181 com caracteres "L"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19659 ms: escrevendo bloco 182 com caracteres "2"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19703 ms: escrevendo bloco 183 com caracteres "1"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19740 ms: escrevendo bloco 184 com caracteres "&"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19798 ms: escrevendo bloco 185 com caracteres "L"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19832 ms: escrevendo bloco 186 com caracteres "I"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19878 ms: escrevendo bloco 187 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19929 ms: escrevendo bloco 188 com caracteres "%"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-19972 ms: escrevendo bloco 189 com caracteres "7"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20024 ms: escrevendo bloco 190 com caracteres "A"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20082 ms: escrevendo bloco 191 com caracteres "M"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20126 ms: escrevendo bloco 192 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20184 ms: escrevendo bloco 193 com caracteres """
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20219 ms: escrevendo bloco 194 com caracteres "D"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20262 ms: escrevendo bloco 195 com caracteres "*"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20313 ms: escrevendo bloco 196 com caracteres " "
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20367 ms: escrevendo bloco 197 com caracteres "'"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20418 ms: escrevendo bloco 198 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20472 ms: escrevendo bloco 199 com caracteres "4"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20530 ms: escrevendo bloco 200 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20562 ms: escrevendo bloco 201 com caracteres "9"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20598 ms: escrevendo bloco 202 com caracteres "1"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20651 ms: escrevendo bloco 203 com caracteres "<"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20700 ms: escrevendo bloco 204 com caracteres "J"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20739 ms: escrevendo bloco 205 com caracteres ","
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20786 ms: escrevendo bloco 206 com caracteres "F"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20825 ms: escrevendo bloco 207 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20877 ms: escrevendo bloco 208 com caracteres "D"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20932 ms: escrevendo bloco 209 com caracteres "0"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-20980 ms: escrevendo bloco 210 com caracteres "%"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21026 ms: escrevendo bloco 211 com caracteres "5"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21058 ms: escrevendo bloco 212 com caracteres " "
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21104 ms: escrevendo bloco 213 com caracteres "("
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21138 ms: escrevendo bloco 214 com caracteres "5"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21179 ms: escrevendo bloco 215 com caracteres "<"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21232 ms: escrevendo bloco 216 com caracteres "M"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21264 ms: escrevendo bloco 217 com caracteres "-"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21313 ms: escrevendo bloco 218 com caracteres "L"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21364 ms: escrevendo bloco 219 com caracteres "D"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21416 ms: escrevendo bloco 220 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21458 ms: escrevendo bloco 221 com caracteres "B"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21494 ms: escrevendo bloco 222 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21530 ms: escrevendo bloco 223 com caracteres "E"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21578 ms: escrevendo bloco 224 com caracteres "D"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21623 ms: escrevendo bloco 225 com caracteres "7"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21659 ms: escrevendo bloco 226 com caracteres "?"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21702 ms: escrevendo bloco 227 com caracteres "N"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21734 ms: escrevendo bloco 228 com caracteres ")"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21782 ms: escrevendo bloco 229 com caracteres "+"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21816 ms: escrevendo bloco 230 com caracteres "3"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21850 ms: escrevendo bloco 231 com caracteres "4"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21883 ms: escrevendo bloco 232 com caracteres "."
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21933 ms: escrevendo bloco 233 com caracteres ">"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-21982 ms: escrevendo bloco 234 com caracteres "+"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22035 ms: escrevendo bloco 235 com caracteres "1"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22075 ms: escrevendo bloco 236 com caracteres "#"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22121 ms: escrevendo bloco 237 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22170 ms: escrevendo bloco 238 com caracteres "&"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22204 ms: escrevendo bloco 239 com caracteres "M"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22248 ms: escrevendo bloco 240 com caracteres "F"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22285 ms: escrevendo bloco 241 com caracteres "C"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22328 ms: escrevendo bloco 242 com caracteres "1"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22374 ms: escrevendo bloco 243 com caracteres "F"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22414 ms: escrevendo bloco 244 com caracteres "("
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22461 ms: escrevendo bloco 245 com caracteres "9"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22515 ms: escrevendo bloco 246 com caracteres ")"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22547 ms: escrevendo bloco 247 com caracteres "K"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22592 ms: escrevendo bloco 248 com caracteres "O"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22638 ms: escrevendo bloco 249 com caracteres """
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22693 ms: escrevendo bloco 250 com caracteres "+"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22731 ms: escrevendo bloco 251 com caracteres "2"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22772 ms: escrevendo bloco 252 com caracteres "G"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22813 ms: escrevendo bloco 253 com caracteres "="
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22846 ms: escrevendo bloco 254 com caracteres "N"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22878 ms: escrevendo bloco 255 com caracteres "7"
-
-0 foi a distancia percorrida entre o request e o bloco retornado
-22936 ms: main fim
-Task 0 exit: execution time 22936 ms, processor time 138 ms, 513 activations
-Task 1 exit: execution time 22936 ms, processor time 11383 ms, 10774361 activations
-
-A quantidade de blocos percorridos foi: 0
+11221 ms: escrevendo bloco 0 com caracteres "1"
+11536 ms: escrevendo bloco 1 com caracteres "#"
+11569 ms: escrevendo bloco 2 com caracteres "="
+11616 ms: escrevendo bloco 3 com caracteres "A"
+11648 ms: escrevendo bloco 4 com caracteres "5"
+11703 ms: escrevendo bloco 5 com caracteres "+"
+11748 ms: escrevendo bloco 6 com caracteres " "
+11785 ms: escrevendo bloco 7 com caracteres "0"
+11829 ms: escrevendo bloco 8 com caracteres "4"
+11880 ms: escrevendo bloco 9 com caracteres "B"
+11913 ms: escrevendo bloco 10 com caracteres "-"
+11959 ms: escrevendo bloco 11 com caracteres "3"
+12016 ms: escrevendo bloco 12 com caracteres "9"
+12071 ms: escrevendo bloco 13 com caracteres "0"
+12110 ms: escrevendo bloco 14 com caracteres "4"
+12153 ms: escrevendo bloco 15 com caracteres "0"
+12190 ms: escrevendo bloco 16 com caracteres "$"
+12231 ms: escrevendo bloco 17 com caracteres "="
+12265 ms: escrevendo bloco 18 com caracteres "A"
+12303 ms: escrevendo bloco 19 com caracteres "J"
+12356 ms: escrevendo bloco 20 com caracteres "="
+12394 ms: escrevendo bloco 21 com caracteres "<"
+12432 ms: escrevendo bloco 22 com caracteres "@"
+12478 ms: escrevendo bloco 23 com caracteres "F"
+12526 ms: escrevendo bloco 24 com caracteres "+"
+12567 ms: escrevendo bloco 25 com caracteres "I"
+12620 ms: escrevendo bloco 26 com caracteres "K"
+12663 ms: escrevendo bloco 27 com caracteres "B"
+12701 ms: escrevendo bloco 28 com caracteres "2"
+12742 ms: escrevendo bloco 29 com caracteres "O"
+12784 ms: escrevendo bloco 30 com caracteres "B"
+12824 ms: escrevendo bloco 31 com caracteres "+"
+12870 ms: escrevendo bloco 32 com caracteres """
+12920 ms: escrevendo bloco 33 com caracteres "G"
+12963 ms: escrevendo bloco 34 com caracteres "6"
+13006 ms: escrevendo bloco 35 com caracteres "+"
+13059 ms: escrevendo bloco 36 com caracteres "'"
+13096 ms: escrevendo bloco 37 com caracteres "!"
+13131 ms: escrevendo bloco 38 com caracteres "D"
+13178 ms: escrevendo bloco 39 com caracteres "+"
+13233 ms: escrevendo bloco 40 com caracteres "?"
+13291 ms: escrevendo bloco 41 com caracteres "7"
+13332 ms: escrevendo bloco 42 com caracteres "2"
+13368 ms: escrevendo bloco 43 com caracteres "/"
+13406 ms: escrevendo bloco 44 com caracteres "L"
+13464 ms: escrevendo bloco 45 com caracteres "*"
+13499 ms: escrevendo bloco 46 com caracteres "M"
+13536 ms: escrevendo bloco 47 com caracteres "5"
+13588 ms: escrevendo bloco 48 com caracteres ">"
+13623 ms: escrevendo bloco 49 com caracteres "#"
+13669 ms: escrevendo bloco 50 com caracteres "N"
+13704 ms: escrevendo bloco 51 com caracteres "8"
+13739 ms: escrevendo bloco 52 com caracteres "&"
+13773 ms: escrevendo bloco 53 com caracteres "-"
+13831 ms: escrevendo bloco 54 com caracteres "A"
+13882 ms: escrevendo bloco 55 com caracteres "I"
+13918 ms: escrevendo bloco 56 com caracteres ">"
+13956 ms: escrevendo bloco 57 com caracteres ";"
+14008 ms: escrevendo bloco 58 com caracteres "J"
+14067 ms: escrevendo bloco 59 com caracteres "4"
+14121 ms: escrevendo bloco 60 com caracteres "H"
+14166 ms: escrevendo bloco 61 com caracteres "D"
+14222 ms: escrevendo bloco 62 com caracteres "3"
+14266 ms: escrevendo bloco 63 com caracteres "%"
+14306 ms: escrevendo bloco 64 com caracteres "F"
+14354 ms: escrevendo bloco 65 com caracteres "6"
+14409 ms: escrevendo bloco 66 com caracteres "7"
+14464 ms: escrevendo bloco 67 com caracteres ":"
+14522 ms: escrevendo bloco 68 com caracteres "H"
+14555 ms: escrevendo bloco 69 com caracteres "'"
+14591 ms: escrevendo bloco 70 com caracteres "1"
+14640 ms: escrevendo bloco 71 com caracteres ";"
+14679 ms: escrevendo bloco 72 com caracteres "@"
+14734 ms: escrevendo bloco 73 com caracteres "/"
+14769 ms: escrevendo bloco 74 com caracteres "A"
+14823 ms: escrevendo bloco 75 com caracteres "@"
+14868 ms: escrevendo bloco 76 com caracteres "A"
+14912 ms: escrevendo bloco 77 com caracteres "/"
+14964 ms: escrevendo bloco 78 com caracteres "."
+15022 ms: escrevendo bloco 79 com caracteres "&"
+15059 ms: escrevendo bloco 80 com caracteres "L"
+15107 ms: escrevendo bloco 81 com caracteres ")"
+15143 ms: escrevendo bloco 82 com caracteres "J"
+15201 ms: escrevendo bloco 83 com caracteres "0"
+15236 ms: escrevendo bloco 84 com caracteres ";"
+15293 ms: escrevendo bloco 85 com caracteres "M"
+15343 ms: escrevendo bloco 86 com caracteres "'"
+15392 ms: escrevendo bloco 87 com caracteres "+"
+15429 ms: escrevendo bloco 88 com caracteres "N"
+15478 ms: escrevendo bloco 89 com caracteres "B"
+15511 ms: escrevendo bloco 90 com caracteres "M"
+15564 ms: escrevendo bloco 91 com caracteres "9"
+15611 ms: escrevendo bloco 92 com caracteres "8"
+15661 ms: escrevendo bloco 93 com caracteres "C"
+15693 ms: escrevendo bloco 94 com caracteres "L"
+15731 ms: escrevendo bloco 95 com caracteres "+"
+15788 ms: escrevendo bloco 96 com caracteres "%"
+15821 ms: escrevendo bloco 97 com caracteres "<"
+15858 ms: escrevendo bloco 98 com caracteres "G"
+15890 ms: escrevendo bloco 99 com caracteres "B"
+15948 ms: escrevendo bloco 100 com caracteres "$"
+15993 ms: escrevendo bloco 101 com caracteres "?"
+16031 ms: escrevendo bloco 102 com caracteres "7"
+16074 ms: escrevendo bloco 103 com caracteres "C"
+16111 ms: escrevendo bloco 104 com caracteres "E"
+16155 ms: escrevendo bloco 105 com caracteres "E"
+16197 ms: escrevendo bloco 106 com caracteres "9"
+16244 ms: escrevendo bloco 107 com caracteres "A"
+16281 ms: escrevendo bloco 108 com caracteres "6"
+16340 ms: escrevendo bloco 109 com caracteres "'"
+16393 ms: escrevendo bloco 110 com caracteres "M"
+16433 ms: escrevendo bloco 111 com caracteres ";"
+16490 ms: escrevendo bloco 112 com caracteres "6"
+16537 ms: escrevendo bloco 113 com caracteres """
+16571 ms: escrevendo bloco 114 com caracteres "3"
+16607 ms: escrevendo bloco 115 com caracteres "1"
+16649 ms: escrevendo bloco 116 com caracteres "D"
+16693 ms: escrevendo bloco 117 com caracteres "3"
+16738 ms: escrevendo bloco 118 com caracteres "+"
+16795 ms: escrevendo bloco 119 com caracteres "1"
+16843 ms: escrevendo bloco 120 com caracteres "L"
+16893 ms: escrevendo bloco 121 com caracteres "4"
+16931 ms: escrevendo bloco 122 com caracteres "E"
+16979 ms: escrevendo bloco 123 com caracteres "&"
+17017 ms: escrevendo bloco 124 com caracteres "J"
+17067 ms: escrevendo bloco 125 com caracteres "."
+17117 ms: escrevendo bloco 126 com caracteres " "
+17161 ms: escrevendo bloco 127 com caracteres ":"
+17218 ms: escrevendo bloco 128 com caracteres " "
+17267 ms: escrevendo bloco 129 com caracteres "5"
+17312 ms: escrevendo bloco 130 com caracteres "@"
+17370 ms: escrevendo bloco 131 com caracteres ";"
+17407 ms: escrevendo bloco 132 com caracteres "F"
+17453 ms: escrevendo bloco 133 com caracteres " "
+17485 ms: escrevendo bloco 134 com caracteres "5"
+17544 ms: escrevendo bloco 135 com caracteres "C"
+17588 ms: escrevendo bloco 136 com caracteres "("
+17631 ms: escrevendo bloco 137 com caracteres "7"
+17679 ms: escrevendo bloco 138 com caracteres ","
+17716 ms: escrevendo bloco 139 com caracteres "J"
+17761 ms: escrevendo bloco 140 com caracteres "+"
+17809 ms: escrevendo bloco 141 com caracteres ">"
+17857 ms: escrevendo bloco 142 com caracteres "2"
+17913 ms: escrevendo bloco 143 com caracteres "#"
+17971 ms: escrevendo bloco 144 com caracteres "$"
+18015 ms: escrevendo bloco 145 com caracteres "6"
+18072 ms: escrevendo bloco 146 com caracteres ">"
+18109 ms: escrevendo bloco 147 com caracteres "9"
+18160 ms: escrevendo bloco 148 com caracteres "0"
+18206 ms: escrevendo bloco 149 com caracteres "&"
+18263 ms: escrevendo bloco 150 com caracteres ":"
+18303 ms: escrevendo bloco 151 com caracteres "7"
+18337 ms: escrevendo bloco 152 com caracteres "0"
+18373 ms: escrevendo bloco 153 com caracteres "!"
+18418 ms: escrevendo bloco 154 com caracteres "K"
+18457 ms: escrevendo bloco 155 com caracteres "3"
+18515 ms: escrevendo bloco 156 com caracteres "3"
+18552 ms: escrevendo bloco 157 com caracteres "C"
+18602 ms: escrevendo bloco 158 com caracteres "9"
+18658 ms: escrevendo bloco 159 com caracteres "8"
+18693 ms: escrevendo bloco 160 com caracteres "N"
+18747 ms: escrevendo bloco 161 com caracteres """
+18799 ms: escrevendo bloco 162 com caracteres " "
+18832 ms: escrevendo bloco 163 com caracteres "0"
+18877 ms: escrevendo bloco 164 com caracteres "$"
+18913 ms: escrevendo bloco 165 com caracteres "F"
+18968 ms: escrevendo bloco 166 com caracteres "@"
+19015 ms: escrevendo bloco 167 com caracteres "A"
+19072 ms: escrevendo bloco 168 com caracteres "K"
+19112 ms: escrevendo bloco 169 com caracteres "N"
+19165 ms: escrevendo bloco 170 com caracteres "M"
+19208 ms: escrevendo bloco 171 com caracteres "N"
+19248 ms: escrevendo bloco 172 com caracteres "C"
+19285 ms: escrevendo bloco 173 com caracteres "&"
+19324 ms: escrevendo bloco 174 com caracteres "G"
+19369 ms: escrevendo bloco 175 com caracteres "J"
+19411 ms: escrevendo bloco 176 com caracteres "M"
+19452 ms: escrevendo bloco 177 com caracteres "A"
+19486 ms: escrevendo bloco 178 com caracteres "'"
+19530 ms: escrevendo bloco 179 com caracteres "N"
+19579 ms: escrevendo bloco 180 com caracteres "H"
+19635 ms: escrevendo bloco 181 com caracteres "9"
+19684 ms: escrevendo bloco 182 com caracteres "B"
+19722 ms: escrevendo bloco 183 com caracteres "J"
+19778 ms: escrevendo bloco 184 com caracteres "="
+19834 ms: escrevendo bloco 185 com caracteres "5"
+19892 ms: escrevendo bloco 186 com caracteres "I"
+19932 ms: escrevendo bloco 187 com caracteres ","
+19980 ms: escrevendo bloco 188 com caracteres "4"
+20015 ms: escrevendo bloco 189 com caracteres "9"
+20058 ms: escrevendo bloco 190 com caracteres "A"
+20094 ms: escrevendo bloco 191 com caracteres "@"
+20140 ms: escrevendo bloco 192 com caracteres "?"
+20189 ms: escrevendo bloco 193 com caracteres "+"
+20235 ms: escrevendo bloco 194 com caracteres "B"
+20272 ms: escrevendo bloco 195 com caracteres "A"
+20311 ms: escrevendo bloco 196 com caracteres "/"
+20360 ms: escrevendo bloco 197 com caracteres "D"
+20396 ms: escrevendo bloco 198 com caracteres "E"
+20440 ms: escrevendo bloco 199 com caracteres "O"
+20484 ms: escrevendo bloco 200 com caracteres "&"
+20532 ms: escrevendo bloco 201 com caracteres "."
+20576 ms: escrevendo bloco 202 com caracteres "7"
+20624 ms: escrevendo bloco 203 com caracteres ","
+20663 ms: escrevendo bloco 204 com caracteres "L"
+20719 ms: escrevendo bloco 205 com caracteres "F"
+20776 ms: escrevendo bloco 206 com caracteres "8"
+20817 ms: escrevendo bloco 207 com caracteres "K"
+20853 ms: escrevendo bloco 208 com caracteres "'"
+20910 ms: escrevendo bloco 209 com caracteres "="
+20963 ms: escrevendo bloco 210 com caracteres "!"
+21018 ms: escrevendo bloco 211 com caracteres "E"
+21077 ms: escrevendo bloco 212 com caracteres "H"
+21110 ms: escrevendo bloco 213 com caracteres "!"
+21150 ms: escrevendo bloco 214 com caracteres "7"
+21183 ms: escrevendo bloco 215 com caracteres "1"
+21235 ms: escrevendo bloco 216 com caracteres "E"
+21292 ms: escrevendo bloco 217 com caracteres ","
+21340 ms: escrevendo bloco 218 com caracteres ")"
+21379 ms: escrevendo bloco 219 com caracteres "H"
+21437 ms: escrevendo bloco 220 com caracteres "="
+21481 ms: escrevendo bloco 221 com caracteres "3"
+21535 ms: escrevendo bloco 222 com caracteres "5"
+21573 ms: escrevendo bloco 223 com caracteres "L"
+21618 ms: escrevendo bloco 224 com caracteres "%"
+21669 ms: escrevendo bloco 225 com caracteres "7"
+21701 ms: escrevendo bloco 226 com caracteres "'"
+21743 ms: escrevendo bloco 227 com caracteres "F"
+21797 ms: escrevendo bloco 228 com caracteres "%"
+21851 ms: escrevendo bloco 229 com caracteres ">"
+21902 ms: escrevendo bloco 230 com caracteres "I"
+21951 ms: escrevendo bloco 231 com caracteres "I"
+21994 ms: escrevendo bloco 232 com caracteres "."
+22045 ms: escrevendo bloco 233 com caracteres ";"
+22077 ms: escrevendo bloco 234 com caracteres ">"
+22126 ms: escrevendo bloco 235 com caracteres "L"
+22181 ms: escrevendo bloco 236 com caracteres "#"
+22230 ms: escrevendo bloco 237 com caracteres "!"
+22278 ms: escrevendo bloco 238 com caracteres "N"
+22329 ms: escrevendo bloco 239 com caracteres "5"
+22365 ms: escrevendo bloco 240 com caracteres "G"
+22394 ms: escrevendo bloco 241 com caracteres "*"
+22443 ms: escrevendo bloco 242 com caracteres "H"
+22492 ms: escrevendo bloco 243 com caracteres "."
+22547 ms: escrevendo bloco 244 com caracteres "H"
+22591 ms: escrevendo bloco 245 com caracteres "I"
+22629 ms: escrevendo bloco 246 com caracteres ";"
+22662 ms: escrevendo bloco 247 com caracteres " "
+22713 ms: escrevendo bloco 248 com caracteres "("
+22759 ms: escrevendo bloco 249 com caracteres "@"
+22803 ms: escrevendo bloco 250 com caracteres "O"
+22848 ms: escrevendo bloco 251 com caracteres "A"
+22882 ms: escrevendo bloco 252 com caracteres "L"
+22938 ms: escrevendo bloco 253 com caracteres ";"
+22990 ms: escrevendo bloco 254 com caracteres "0"
+23039 ms: escrevendo bloco 255 com caracteres "."
+23092 ms: main fim
+Task 0 exit: execution time 23092 ms, processor time 109 ms, 513 activations
+Task 1 exit: execution time 23092 ms, processor time 11429 ms, 10032297 activations
+
+A quantidade de blocos percorridos foi: 765
