@@ -4,6 +4,7 @@
 #include "ppos-disk-manager.h"
 #include <signal.h>    // Necessário para struct sigaction e sigaction()
 #include <sys/time.h>  // Necessário para struct itimerval e setitimer()
+#include <limits.h> // Necessário para INT_MAX
 
 // ****************************************************************************
 // Adicione TUDO O QUE FOR NECESSARIO para realizar o seu trabalho
@@ -115,6 +116,64 @@ int blocos_percorridos = 0;
 
 int anterior = 0;
 
+diskrequest_t* disk_scheduler_fcfs(diskrequest_t* request) {
+    return request;
+}
+
+
+diskrequest_t* disk_scheduler_sstf(diskrequest_t* request, int* dist) {
+    int menor_dist = INT_MAX;
+    diskrequest_t* retorno = NULL;
+    for (diskrequest_t* r = request; r != request || retorno == NULL; r = r->next) {
+        *dist = abs(r->block - anterior);
+        if (*dist < menor_dist) {
+            menor_dist = *dist;
+            retorno = r;
+        }
+    }
+    return retorno;
+}
+
+
+diskrequest_t* disk_scheduler_cscan(diskrequest_t* request) {
+    diskrequest_t* escolhido = NULL;
+    diskrequest_t* retorno = NULL;
+    int menor_dist = INT_MAX;
+    int encontrou = 0;
+
+    diskrequest_t* r = request;
+    int head = anterior;
+    // printf("\nCSCAN, com head em %d", head);
+    do {
+        if (r->block >= head && (r->block - head) < menor_dist) {
+            menor_dist = r->block - head;
+            escolhido = r;
+            encontrou = 1;
+        }
+        r = r->next;
+    } while (r != request);
+
+    if (!encontrou) {
+        blocos_percorridos += 255 + (255 - head);
+        menor_dist = INT_MAX;
+
+        r = request;
+        do {
+            if (r->block < menor_dist) {
+                menor_dist = r->block;
+                escolhido = r;
+            }
+            r = r->next;
+        } while (r != request);
+        anterior = 0;
+    }
+    retorno = escolhido;
+
+    return retorno;
+}
+
+
+
 diskrequest_t* disk_scheduler(diskrequest_t* request) {
     int dist;
     if (!request)
@@ -123,67 +182,17 @@ diskrequest_t* disk_scheduler(diskrequest_t* request) {
     diskrequest_t* retorno = NULL;
 
     if (politica_disco == MODO_FCFS) {
-        // printf("\nFCFS");
-        retorno = request;
+        retorno = disk_scheduler_fcfs(request);
+    } else if (politica_disco == MODO_SSTF) {
+        retorno = disk_scheduler_sstf(request, &dist);
+    } else if (politica_disco == MODO_CSCAN) {
+        retorno = disk_scheduler_cscan(request);
+    } else {
+        printf("\nErro: politica de disco invalida.\n");
+        exit(1);
     }
-    else if (politica_disco == MODO_SSTF) {
-        int menor_dist = 99999999;
-        // printf("\nSSTF com head em %d", anterior);
-        for (diskrequest_t* r = request; r != request || retorno == NULL; r = r->next) {
-            dist = abs(r->block - anterior);
-            if (dist < menor_dist) {
-                menor_dist = dist;
-                retorno = r;
-                // printf("\n%d block minimo\n", r->block); //printa o bloco mais proximo do head, caso ele seja o menor encontrado ate aquele momento
-                
-            }
-            // printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
-        }  
-    }
-    else if (politica_disco == MODO_CSCAN) {
-        
 
-        diskrequest_t* escolhido = NULL;
-        int menor_dist = 99999999;
-        int encontrou = 0;
-
-        diskrequest_t* r = request;
-        int head = anterior;
-        // printf("\nCSCAN, com head em %d", head);
-        do {
-            if (r->block >= head && (r->block - head) < menor_dist) {
-                menor_dist = r->block - head;
-                escolhido = r;
-                encontrou = 1;
-            }
-            r = r->next;
-            // printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
-        } while (r != request);
-
-        if (!encontrou) {
-            // printf("\n volta ao comeco :head de %d volta pra 0", head); //avisa que chegou ate o final do disco e vai voltar a contar do 0
-            blocos_percorridos += 255 + (255 - head);
-            menor_dist = 99999999;
-
-            r = request;
-            do {
-                if (r->block < menor_dist) {
-                    menor_dist = r->block;
-                    escolhido = r;
-                }
-                r = r->next;
-                // printf("\n%d block atual\n", r->block); //printa cada bloco da lista de request, para ser possivel comparar se esta escolhendo o certo
-            } while (r != request);
-        anterior = 0;
-        printf("\n%d foi a distancia percorrida para sair do head, ir ate 255 depois ate o 0 e ate o bloco retornado\n", 255 + (255 - head) + abs(escolhido->block - anterior));
-        
-        }
-
-        retorno = escolhido;
-    }
-    // printf("\nbloco retornado %d", retorno->block); //avisa qual o bloco retornado, para ver se faz sentido com o head e a politioc
     dist = abs(retorno->block - anterior);
-    // printf("\n%d foi a distancia percorrida entre o request e o bloco retornado\n", dist); //serve para ver se faz sentido a distancia percorrida em cada iteracao
     anterior = retorno->block;
     blocos_percorridos += dist;
 
@@ -391,10 +400,9 @@ void before_task_switch ( task_t *task ) {
     } 
     // Se a tarefa que está parando de executar for o dispatcher, 
     else if(taskExec->id == 1 && finished_disp == 0) {
-        // printf("Dispatcher: readyQueue size = %d\n", queue_size((queue_t *)readyQueue));
-        // if(task->id == 0) {
+        if(task->id != 2 || disco.sinal) {
             processor_time_disp += ((int)systime() - start_processor_disp);
-        // }
+        }
     }
 /*****************************************TAREFA ATUAL QUE ESTÁ SAINDO********************************************************************/
 // [<--bloco 0000
@@ -405,7 +413,7 @@ void before_task_switch ( task_t *task ) {
     if(task->id != 1 && task->id != 0 && task->finished == 0) {
         task->start_processor = (int)systime();
         task->activations++;
-    } 
+    }
     // Se a tarefa que está começando a executar for a main, guarda o tempo de início dela no processador e incrementa o número de ativações dela
     else if(task->id == 0 && finished_main == 0) {
         start_processor_main = (int)systime();
@@ -413,10 +421,10 @@ void before_task_switch ( task_t *task ) {
     }
     // Se a tarefa que está começando a executar for o dispatcher, guarda o tempo de início dela no processador e incrementa o número de ativações dela
     else if(task->id == 1 && finished_disp == 0) {
-        // if(taskExec->id == 0) {
+        if(taskExec->id != 2 || disco.sinal) {
             start_processor_disp = (int)systime();
             activations_disp++;
-        // }
+        }
     }
 
 /*************************************TAREFA QUE ESTÁ COMEÇANDO A EXECUTAR****************************************************************/

@@ -5,10 +5,12 @@
 disk_t disco;
 task_t taskDiskMgr;
 
+struct sigaction diskAction;
+
 // Protótipos
 void bodyDiskManager(void *arg);
 void diskSignalHandler(int signum);
-// void clean_exit_on_sig(int sig_num);
+void clean_exit_on_sig(int sig_num);
 
 // Inicialização do gerente de disco
 int disk_mgr_init(int *numBlocks, int *blockSize) {
@@ -41,7 +43,6 @@ int disk_mgr_init(int *numBlocks, int *blockSize) {
     task_create(&taskDiskMgr, bodyDiskManager, NULL);
 
     // Handler de sinal do disco
-    struct sigaction diskAction;
     diskAction.sa_handler = diskSignalHandler;
     sigemptyset(&diskAction.sa_mask);
     diskAction.sa_flags = 0;
@@ -49,7 +50,7 @@ int disk_mgr_init(int *numBlocks, int *blockSize) {
         perror("Erro em sigaction: ");
         exit(1);
     }
-    // signal(SIGSEGV, clean_exit_on_sig);
+    signal(SIGSEGV, clean_exit_on_sig);
 
     return 0;
 }
@@ -148,11 +149,9 @@ void diskSignalHandler(int signum) {
     disco.sinal = 1;
 }
 
-// // Handler para SIGSEGV
-// void clean_exit_on_sig(int sig_num) {
-//     int err = errno;
-//     printf("\n[DEBUG] clean_exit_on_sig chamado!\n");
-//     fprintf(stderr, "\n ERROR[Signal = %d]: %d \"%s\"\n", sig_num, err, strerror(err));
-//     printf("\n[DEBUG] clean_exit_on_sig chamado!\n");
-//     exit(err);
-// }
+// Handler para SIGSEGV
+void clean_exit_on_sig(int sig_num) {
+    int err = errno;
+    fprintf(stderr, "\n ERROR[Signal = %d]: %d \"%s\"\n", sig_num, err, strerror(err));
+    exit(err);
+}
